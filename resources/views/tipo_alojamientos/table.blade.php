@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="tipoAlojamientos-table">
+    <table class="table table-bordered table-hover dataTable" id="tipoAlojamientos-table" >
         <thead>
             <tr>
                 <th>Name</th>
@@ -26,3 +26,16 @@
         </tbody>
     </table>
 </div>
+
+<script>
+  $(function () {
+    $('#tipoAlojamientos-table').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>

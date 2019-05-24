@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'PublicController@index');
 
 Auth::routes();
 
@@ -25,3 +27,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('tipoAlojamientos', 'TipoAlojamientoController');
+
+Route::resource('categoriaAlojamientos', 'CategoriaAlojamientoController');
