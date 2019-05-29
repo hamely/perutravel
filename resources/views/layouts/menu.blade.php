@@ -18,3 +18,7 @@
     <a href="{!! route('languages.index') !!}"><i class="fa fa-edit"></i><span>Languages</span></a>
 </li>
 
+<li class="{{ Request::is('paises*') ? 'active' : '' }}">
+    <a href="{!! route('paises.index') !!}"><i class="fa fa-edit"></i><span>Paises</span></a>
+</li>
+

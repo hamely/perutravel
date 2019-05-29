@@ -35,3 +35,5 @@ Route::resource('ubigeos', 'UbigeoController');
 Route::resource('multimedia', 'multimediaController');
 
 Route::resource('languages', 'languagesController');
+
+Route::resource('paises', 'paisesController');
