@@ -29,3 +29,7 @@ Route::get('/home', 'HomeController@index');
 Route::resource('tipoAlojamientos', 'TipoAlojamientoController');
 
 Route::resource('categoriaAlojamientos', 'CategoriaAlojamientoController');
+
+Route::resource('tipoHabitacions', 'tipo_habitacionController');
+
+Route::resource('alojamientos', 'alojamientoController');
