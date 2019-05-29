@@ -6,21 +6,37 @@
 
 <!-- Id Ubigeo Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_ubigeo', 'Id Ubigeo:') !!}
-    {!! Form::text('id_ubigeo', null, ['class' => 'form-control']) !!}
+    {!! Form::label('id_ubigeo', 'Ubigeo:') !!}
+
+      <select id="id_ubigeo" name="id_ubigeo" class='form-control'>
+            @foreach($ubigeo  as $item )
+                <option value="{{$item->id}}"> {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
+            @endforeach
+        </select>
+            
 </div>
 
 <!-- Id Categoria Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_categoria', 'Categoria:') !!}
-    {!! Form::select('id_categoria', $Categoria, ['class' => 'form-control']) !!}
+        <select id="id_categoria" name="id_categoria" class='form-control'>
+            @foreach($categoria as $item )
+                <option value="{{$item->id}}">{{$item->name}}</option>
+            @endforeach
+        </select>
+               
+
 </div>
 
 <!-- Id Tipo Alojamiento Field -->
-{{-- <div class="form-group col-sm-6">
-    {!! Form::label('id_tipo_alojamiento', 'Id Tipo Alojamiento:') !!}
-    {!! Form::text('id_tipo_alojamiento', $tipo_alojamiento, ['class' => 'form-control']) !!}
-</div> --}}
+<div class="form-group col-sm-6">
+    {!! Form::label('id_tipo_alojamiento', 'Tipo Alojamiento:') !!}
+     <select id="id_tipo_alojamiento" name="id_tipo_alojamiento" class='form-control'>
+            @foreach($tipo_alojamientos as $item )
+                <option value="{{$item->id}}">{{$item->description}}</option>
+            @endforeach
+        </select>
+</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

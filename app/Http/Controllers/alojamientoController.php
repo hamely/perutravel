@@ -10,16 +10,15 @@ use App\Repositories\CategoriaAlojamientoRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class alojamientoController extends AppBaseController
 {
     /** @var  alojamientoRepository */
     private $alojamientoRepository;
 
-    public function __construct(alojamientoRepository $alojamientoRepo, CategoriaAlojamientoRepository $categoriaAlojamientoRepo)
+    public function __construct(alojamientoRepository $alojamientoRepo)
     {
         $this->alojamientoRepository = $alojamientoRepo;
-        $this->categoriaAlojamientoRepository = $categoriaAlojamientoRepo;
     }
 
     /**
@@ -44,11 +43,18 @@ class alojamientoController extends AppBaseController
      */
     public function create()
     {
-        $Categoria = $this->categoriaAlojamientoRepository->select("id","name")->get();
        
-
-        return view('alojamientos.create',compact('Categoria'));
-
+        $categoria = DB::table('categoria_alojamientos')
+                    ->select('id', 'name')
+                    ->get();
+        $tipo_alojamientos = DB::table('tipo_alojamientos')
+                    ->select('id', 'description')
+                    ->get();
+        $ubigeo = DB::table('ubigeos')
+                    ->select('id','departamento','provincia','distrito')
+                    ->get();
+  
+        return view('alojamientos.create',['categoria'=>$categoria,'tipo_alojamientos'=> $tipo_alojamientos,'ubigeo'=> $ubigeo]);
     }
 
     /**

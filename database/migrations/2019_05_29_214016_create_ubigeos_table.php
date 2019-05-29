@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateUbigeosTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -16,9 +16,9 @@ class CreateUbigeosTable extends Migration
         Schema::create('ubigeos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo');
-            $table->string('departamento');
-            $table->string('provincia');
             $table->string('distrito');
+            $table->string('provincia');
+            $table->string('departamento');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +31,6 @@ class CreateUbigeosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ubigeos');
+        Schema::dropIfExists('ubigeos');
     }
 }
