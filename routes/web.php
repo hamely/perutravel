@@ -29,3 +29,9 @@ Route::get('/home', 'HomeController@index');
 Route::resource('tipoAlojamientos', 'TipoAlojamientoController');
 
 Route::resource('categoriaAlojamientos', 'CategoriaAlojamientoController');
+
+Route::resource('ubigeos', 'UbigeoController');
+
+Route::resource('multimedia', 'multimediaController');
+
+Route::resource('languages', 'languagesController');
