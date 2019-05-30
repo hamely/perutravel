@@ -132,7 +132,7 @@ class alojamientoController extends AppBaseController
             return redirect(route('alojamientos.index'));
         }
 
- $categoria = DB::table('categoria_alojamientos')
+        $categoria = DB::table('categoria_alojamientos')
                     ->select('id', 'name')
                     ->get();
         $tipo_alojamientos = DB::table('tipo_alojamientos')

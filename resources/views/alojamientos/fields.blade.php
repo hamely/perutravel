@@ -10,18 +10,19 @@
 
       <select id="id_ubigeo" name="id_ubigeo" class='form-control'>
             @foreach($ubigeo  as $item )
-                <option value="{{$item->id}}"> {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
+                <option value="{{$item->id}}"{{ ($item->id == $alojamiento->id_ubigeo ) ? 'selected': ''}} > {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
             @endforeach
         </select>
-            
-</div>
 
+      
+</div>
+    
 <!-- Id Categoria Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('id_categoria', 'Categoria:') !!}
         <select id="id_categoria" name="id_categoria" class='form-control'>
             @foreach($categoria as $item )
-                <option value="{{$item->id}}">{{$item->name}}</option>
+                <option value="{{$item->id}}" {{ ($item->id == $alojamiento->id_categoria ) ? 'selected': ''}} >{{$item->name}}</option>
             @endforeach
         </select>
                
@@ -33,7 +34,7 @@
     {!! Form::label('id_tipo_alojamiento', 'Tipo Alojamiento:') !!}
      <select id="id_tipo_alojamiento" name="id_tipo_alojamiento" class='form-control'>
             @foreach($tipo_alojamientos as $item )
-                <option value="{{$item->id}}">{{$item->description}}</option>
+                <option value="{{$item->id}}"  {{ ($item->id == $alojamiento->id_tipo_alojamiento ) ? 'selected': ''}} >{{$item->description}}</option>
             @endforeach
         </select>
 </div>
