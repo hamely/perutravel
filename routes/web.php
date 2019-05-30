@@ -44,3 +44,5 @@ Route::resource('paises', 'paisesController');
 
 
 Route::resource('testimonios', 'TestimonioController');
+
+Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');

@@ -32,3 +32,7 @@
     <a href="{!! route('testimonios.index') !!}"><i class="fa fa-edit"></i><span>Testimonios</span></a>
 </li>
 
+<li class="{{ Request::is('tipoCategoriaTours*') ? 'active' : '' }}">
+    <a href="{!! route('tipoCategoriaTours.index') !!}"><i class="fa fa-edit"></i><span>Tipo Categoria Tours</span></a>
+</li>
+
