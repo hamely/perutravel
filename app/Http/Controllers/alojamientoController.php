@@ -53,6 +53,7 @@ class alojamientoController extends AppBaseController
     public function create()
     {
        
+        $opcion=0;
         $categoria = DB::table('categoria_alojamientos')
                     ->select('id', 'name')
                     ->get();
@@ -63,7 +64,7 @@ class alojamientoController extends AppBaseController
                     ->select('id','departamento','provincia','distrito')
                     ->get();
   
-        return view('alojamientos.create',['categoria'=>$categoria,'tipo_alojamientos'=> $tipo_alojamientos,'ubigeo'=> $ubigeo]);
+        return view('alojamientos.create',['categoria'=>$categoria,'tipo_alojamientos'=> $tipo_alojamientos,'ubigeo'=> $ubigeo,'opcion'=> $opcion]);
     }
 
     /**
@@ -94,7 +95,7 @@ class alojamientoController extends AppBaseController
     public function show($id)
     {
         $alojamiento = $this->alojamientoRepository->find($id);
-
+         
         if (empty($alojamiento)) {
             Flash::error('Alojamiento not found');
 
@@ -126,6 +127,7 @@ class alojamientoController extends AppBaseController
     {
         $alojamiento = $this->alojamientoRepository->find($id);
 
+        $opcion=0;
         if (empty($alojamiento)) {
             Flash::error('Alojamiento not found');
 
@@ -144,7 +146,7 @@ class alojamientoController extends AppBaseController
 
         // dd($ubigeo);
         // return view('alojamientos.show',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo]);
-        return view('alojamientos.edit',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo]);
+        return view('alojamientos.edit',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo,'opcion'=> $opcion]);
     }
 
     /**
