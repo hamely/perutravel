@@ -101,7 +101,18 @@ class alojamientoController extends AppBaseController
             return redirect(route('alojamientos.index'));
         }
 
-        return view('alojamientos.show')->with('alojamiento', $alojamiento);
+        $categoria = DB::table('categoria_alojamientos')
+                    ->select('id', 'name')
+                    ->get();
+        $tipo_alojamientos = DB::table('tipo_alojamientos')
+                    ->select('id', 'description')
+                    ->get();
+        $ubigeo = DB::table('ubigeos')
+                    ->select('id','departamento','provincia','distrito')
+                    ->get();
+
+
+        return view('alojamientos.show',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo]);
     }
 
     /**
@@ -121,7 +132,19 @@ class alojamientoController extends AppBaseController
             return redirect(route('alojamientos.index'));
         }
 
-        return view('alojamientos.edit')->with('alojamiento', $alojamiento);
+ $categoria = DB::table('categoria_alojamientos')
+                    ->select('id', 'name')
+                    ->get();
+        $tipo_alojamientos = DB::table('tipo_alojamientos')
+                    ->select('id', 'description')
+                    ->get();
+        $ubigeo = DB::table('ubigeos')
+                    ->select('id','departamento','provincia','distrito')
+                    ->get();
+
+        // dd($ubigeo);
+        // return view('alojamientos.show',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo]);
+        return view('alojamientos.edit',['alojamiento' =>$alojamiento,'categoria' =>$categoria,'tipo_alojamientos' =>$tipo_alojamientos,'ubigeo'=>$ubigeo]);
     }
 
     /**
