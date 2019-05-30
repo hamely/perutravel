@@ -13,9 +13,9 @@
         @foreach($alojamientos as $alojamiento)
             <tr>
                 <td>{!! $alojamiento->nombre !!}</td>
-            <td>{!! $alojamiento->id_ubigeo !!}</td>
-            <td>{!! $alojamiento->id_categoria !!}</td>
-            <td>{!! $alojamiento->id_tipo_alojamiento !!}</td>
+            <td>{!! $alojamiento->departamento !!}</td>
+            <td>{!! $alojamiento->nameCategoria !!}</td>
+            <td>{!! $alojamiento->nameTipoAlo !!}</td>
                 <td>
                     {!! Form::open(['route' => ['alojamientos.destroy', $alojamiento->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

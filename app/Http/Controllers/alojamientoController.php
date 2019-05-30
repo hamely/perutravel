@@ -30,7 +30,16 @@ class alojamientoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $alojamientos = $this->alojamientoRepository->all();
+        // $alojamientos = $this->alojamientoRepository->all();
+
+        $alojamientos = DB::table('alojamientos')
+                         ->select('alojamientos.id','alojamientos.nombre','ubigeos.departamento','categoria_alojamientos.name as nameCategoria','tipo_alojamientos.name as nameTipoAlo')
+                         ->join('categoria_alojamientos', 'categoria_alojamientos.id', '=', 'alojamientos.id_categoria')
+                         ->join('tipo_alojamientos', 'tipo_alojamientos.id', '=', 'alojamientos.id_tipo_alojamiento')
+                         ->join('ubigeos', 'alojamientos.id_ubigeo','=','ubigeos.id')
+                         ->get();
+    
+              
 
         return view('alojamientos.index')
             ->with('alojamientos', $alojamientos);
