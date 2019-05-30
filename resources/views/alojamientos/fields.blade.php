@@ -10,7 +10,12 @@
 
       <select id="id_ubigeo" name="id_ubigeo" class='form-control'>
             @foreach($ubigeo  as $item )
-                <option value="{{$item->id}}"{{ ($item->id == $alojamiento->id_ubigeo ) ? 'selected': ''}} > {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
+                @if($opcion==0)
+                     <option value="{{$item->id}}"> {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
+                @else
+                     <option value="{{$item->id}}"{{ ($item->id == $alojamiento->id_ubigeo ) ? 'selected': ''}} > {{$item->departamento}} - {{$item->provincia}} - {{$item->distrito}} </option>
+                @endif
+               
             @endforeach
         </select>
 
@@ -22,7 +27,12 @@
     {!! Form::label('id_categoria', 'Categoria:') !!}
         <select id="id_categoria" name="id_categoria" class='form-control'>
             @foreach($categoria as $item )
-                <option value="{{$item->id}}" {{ ($item->id == $alojamiento->id_categoria ) ? 'selected': ''}} >{{$item->name}}</option>
+              @if($opcion==0)
+                <option value="{{$item->id}}">{{$item->name}}</option>
+              @else
+                 <option value="{{$item->id}}" {{ ($item->id == $alojamiento->id_categoria ) ? 'selected': ''}} >{{$item->name}}</option>
+              @endif
+               
             @endforeach
         </select>
                
@@ -34,7 +44,12 @@
     {!! Form::label('id_tipo_alojamiento', 'Tipo Alojamiento:') !!}
      <select id="id_tipo_alojamiento" name="id_tipo_alojamiento" class='form-control'>
             @foreach($tipo_alojamientos as $item )
-                <option value="{{$item->id}}"  {{ ($item->id == $alojamiento->id_tipo_alojamiento ) ? 'selected': ''}} >{{$item->description}}</option>
+               @if($opcion==0)
+                  <option value="{{$item->id}}">{{$item->description}}</option>
+               @else
+                  <option value="{{$item->id}}"  {{ ($item->id == $alojamiento->id_tipo_alojamiento ) ? 'selected': ''}} >{{$item->description}}</option>
+               @endif
+              
             @endforeach
         </select>
 </div>
