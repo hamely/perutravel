@@ -127,7 +127,7 @@ class alojamientoController extends AppBaseController
     {
         $alojamiento = $this->alojamientoRepository->find($id);
 
-        $opcion=0;
+        $opcion=1;
         if (empty($alojamiento)) {
             Flash::error('Alojamiento not found');
 
