@@ -19,7 +19,7 @@
 <!-- Fecha Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::text('fecha', null, ['class' => 'form-control']) !!}
+    {!! Form::date('fecha', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Estado Field -->
