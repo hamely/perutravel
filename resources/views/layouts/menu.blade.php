@@ -28,3 +28,7 @@
     <a href="{!! route('paises.index') !!}"><i class="fa fa-edit"></i><span>Paises</span></a>
 </li>
 
+<li class="{{ Request::is('testimonios*') ? 'active' : '' }}">
+    <a href="{!! route('testimonios.index') !!}"><i class="fa fa-edit"></i><span>Testimonios</span></a>
+</li>
+

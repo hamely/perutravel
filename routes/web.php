@@ -41,3 +41,6 @@ Route::resource('languages', 'languagesController');
 
 Route::resource('paises', 'paisesController');
 
+
+
+Route::resource('testimonios', 'TestimonioController');
