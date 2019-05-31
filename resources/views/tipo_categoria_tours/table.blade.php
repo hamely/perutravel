@@ -14,7 +14,7 @@
         <tbody>
         @foreach($tipoCategoriaTours as $tipoCategoriaTour)
             <tr>
-                <td>{!! $tipoCategoriaTour->lenguaje_id !!}</td>
+            <td>{!! $tipoCategoriaTour->nombreleng !!}</td>
             <td>{!! $tipoCategoriaTour->nombre !!}</td>
             <td>{!! $tipoCategoriaTour->alias !!}</td>
             <td>{!! $tipoCategoriaTour->slug !!}</td>

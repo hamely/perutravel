@@ -1,7 +1,18 @@
 <!-- Lenguaje Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('lenguaje_id', 'Lenguaje Id:') !!}
-    {!! Form::text('lenguaje_id', null, ['class' => 'form-control']) !!}
+    <!-- {!! Form::label('lenguaje_id', 'Lenguaje Id:') !!}
+    {!! Form::text('lenguaje_id', null, ['class' => 'form-control']) !!} -->
+    {!! Form::label('lenguaje_id', 'Lenguage:') !!}
+        <select id="lenguaje_id" name="lenguaje_id" class='form-control'>
+            @foreach($language as $item )
+              @if($opcion==0)
+                <option value="{{$item->id}}">{{$item->nombre}}</option>
+              @else
+                 <option value="{{$item->id}}" {{ ($item->id == $tipoCategoriaTour->lenguaje_id) ? 'selected': ''}} >{{$item->nombre}}</option>
+              @endif
+               
+            @endforeach
+        </select>
 </div>
 
 <!-- Nombre Field -->

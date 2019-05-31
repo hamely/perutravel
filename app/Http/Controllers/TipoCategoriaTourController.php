@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class TipoCategoriaTourController extends AppBaseController
 {
     /** @var  TipoCategoriaTourRepository */
@@ -29,7 +29,11 @@ class TipoCategoriaTourController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $tipoCategoriaTours = $this->tipoCategoriaTourRepository->all();
+        // $tipoCategoriaTours = $this->tipoCategoriaTourRepository->all();
+        $tipoCategoriaTours = DB::table('languages')
+        ->select ('languages.nombre as nombreleng','tipo_categoria_tours.id','tipo_categoria_tours.alias','tipo_categoria_tours.nombre','tipo_categoria_tours.slug','tipo_categoria_tours.estado','tipo_categoria_tours.descripcion')
+        ->join('tipo_categoria_tours','tipo_categoria_tours.lenguaje_id','=','languages.id')
+        ->get();
 
         return view('tipo_categoria_tours.index')
             ->with('tipoCategoriaTours', $tipoCategoriaTours);
@@ -42,7 +46,13 @@ class TipoCategoriaTourController extends AppBaseController
      */
     public function create()
     {
-        return view('tipo_categoria_tours.create');
+        $opcion=0;
+
+        $language = DB::table('languages')
+                    ->select('id','nombre','abrr')
+                    ->get();
+
+        return view('tipo_categoria_tours.create',['language'=>$language,'opcion'=>$opcion]);
     }
 
     /**
@@ -94,13 +104,19 @@ class TipoCategoriaTourController extends AppBaseController
     {
         $tipoCategoriaTour = $this->tipoCategoriaTourRepository->find($id);
 
+        $opcion=1;
+
         if (empty($tipoCategoriaTour)) {
             Flash::error('Tipo Categoria Tour not found');
 
             return redirect(route('tipoCategoriaTours.index'));
         }
 
-        return view('tipo_categoria_tours.edit')->with('tipoCategoriaTour', $tipoCategoriaTour);
+        $language = DB::table('languages')
+        ->select('id','nombre','abrr')
+        ->get();
+        // return view('tipo_categoria_tours.edit')->with('tipoCategoriaTour', $tipoCategoriaTour);
+        return view('tipo_categoria_tours.edit',['language'=>$language,'opcion'=>$opcion,'tipoCategoriaTour'=>$tipoCategoriaTour]);
     }
 
     /**
