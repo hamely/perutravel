@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="tours-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -10,7 +10,7 @@
         <th>Slug</th>
         <th>Multimedia Id</th>
         <th>Organizacion</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

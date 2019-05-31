@@ -48,3 +48,5 @@ Route::resource('testimonios', 'TestimonioController');
 Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');
 
 Route::resource('tours', 'toursController');
+
+Route::resource('itinerarios', 'itinerariosController');
