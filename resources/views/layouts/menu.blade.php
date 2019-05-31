@@ -59,4 +59,7 @@
                 </li>
 
           </ul>
+</li><li class="{{ Request::is('tours*') ? 'active' : '' }}">
+    <a href="{!! route('tours.index') !!}"><i class="fa fa-edit"></i><span>Tours</span></a>
 </li>
+
