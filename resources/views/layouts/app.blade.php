@@ -23,7 +23,9 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-    <link href="{{ URL::asset('/public/css/dropzone.css')}}" rel="stylesheet">
+    {{-- <link href="{{ URL::asset('/public/css/dropzone.css')}}" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+
 
 
     @yield('css')
@@ -162,8 +164,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-    <script src="{{ URL::asset('/public/js/dropzone.js')}}"></script>
-    <script src="{{ URL::asset('/public/js/dropzone-config.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+    {{-- <script src="{{ URL::asset('/public/js/dropzone.js')}}"></script> --}}
     @yield('scripts')
 </body>
 </html>
