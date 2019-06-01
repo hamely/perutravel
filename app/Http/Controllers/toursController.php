@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatetoursRequest;
 use App\Repositories\toursRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Repositories\itinerariosRepository;
 use Flash;
 use Response;
 use DB;
@@ -16,9 +17,10 @@ class toursController extends AppBaseController
     /** @var  toursRepository */
     private $toursRepository;
 
-    public function __construct(toursRepository $toursRepo)
+    public function __construct(toursRepository $toursRepo,itinerariosRepository $itinerariosRepo)
     {
         $this->toursRepository = $toursRepo;
+        $this->itinerariosRepository = $itinerariosRepo;
     }
 
     /**
@@ -171,4 +173,5 @@ class toursController extends AppBaseController
 
         return redirect(route('tours.index'));
     }
+ 
 }

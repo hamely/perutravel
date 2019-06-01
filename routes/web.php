@@ -50,3 +50,7 @@ Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');
 Route::resource('tours', 'toursController');
 
 Route::resource('itinerarios', 'itinerariosController');
+
+Route::get('tourItinerario/{id?}','itinerariosController@tourItinerarioShow')->name('tourItinerario');
+
+Route::get('tourItinerarioCreate/{id?}','itinerariosController@tourItinerarioCreate')->name('tourItinerarioCreate');
