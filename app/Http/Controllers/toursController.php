@@ -64,6 +64,7 @@ class toursController extends AppBaseController
      */
     public function store(CreatetoursRequest $request)
     {
+        dd($request->all());
         $input = $request->all();
 
         $tours = $this->toursRepository->create($input);
