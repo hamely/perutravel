@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class itinerariosController extends AppBaseController
 {
     /** @var  itinerariosRepository */
@@ -152,5 +152,24 @@ class itinerariosController extends AppBaseController
         Flash::success('Itinerarios deleted successfully.');
 
         return redirect(route('itinerarios.index'));
+    }
+
+    public function tourItinerarioShow($id)
+    {
+        $itinerarios = DB::table('itinerarios')
+            ->select ('*')
+            ->where('.id_tour','=',$id)
+            ->get();
+
+            return view('itinerarios.index',['id'=>$id,'itinerarios'=>$itinerarios]);
+            // ->with('itinerarios', $itinerarios,'id', $id);
+
+        
+    }
+    
+    public function tourItinerarioCreate($id)
+    {
+       
+            return view('itinerarios.create',['id'=>$id]);
     }
 }
