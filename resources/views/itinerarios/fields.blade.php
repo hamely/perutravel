@@ -18,8 +18,19 @@
 
 <!-- Id Alojamiento Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_alojamiento', 'Id Alojamiento:') !!}
-    {!! Form::text('id_alojamiento', null, ['class' => 'form-control']) !!}
+    <!-- {!! Form::label('id_alojamiento', 'Id Alojamiento:') !!}
+    {!! Form::text('id_alojamiento', null, ['class' => 'form-control']) !!} -->
+    {!! Form::label('id_alojamiento', 'Alojamiento:') !!}
+        <select id="id_alojamiento" name="id_alojamiento" class='form-control'>
+            @foreach($alojamientos as $item )
+              @if($opcion==0)
+                <option value="{{$item->id}}">{{$item->nombre}}</option>
+              @else
+                 <option value="{{$item->id}}" {{ ($item->id == $tours->id_alojamiento) ? 'selected': ''}} >{{$item->nombre}}</option>
+              @endif
+               
+            @endforeach
+        </select>
 </div>
 
 <!-- Dia Field -->
@@ -42,6 +53,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('itinerarios.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('itinerarios.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
+
