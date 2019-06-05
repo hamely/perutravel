@@ -54,16 +54,50 @@
           <h2>Login</h2><i class="close-button flaticon-close"></i>
         </div>
         <div class="login-content">
-          <form class="form">
-            <input type="text" name="email" value="" size="40" placeholder="Enter Your Email ..." aria-required="true" class="form-row form-row-first">
-            <input type="text" name="password" value="" size="40" placeholder="Enter Your Password ..." aria-required="true" class="form-row form-row-last">
-          </form>
-          <div class="remember">
-            <div class="checkbox">
-              <input id="checkbox30" type="checkbox" value="None" name="check">
-              <label for="checkbox30">Remember Me</label>
-            </div><a href="#">Forgot Password ?</a>
-          </div><a href="#" class="cws-button gray alt full-width mt-20">Login now</a>
+          
+            <form method="post" action="{{ url('/login') }}">
+            {!! csrf_field() !!}
+
+            <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
+                <input type="email" class="form-row" name="email" value="{{ old('email') }}" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                    <h6 style="color: red;font-family: italic;">{{ $errors->first('email') }} <h6>
+                </span>
+                @endif
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input type="password"  class="form-row form-row-last" placeholder="Password" name="password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                    <h6 style="color: red;font-family: italic;">{{ $errors->first('password') }} <h6>
+                </span>
+                @endif
+
+            </div>
+            <div class="row">
+                
+                <!-- /.col -->
+                <div class="col-xs-12">
+                    <button type="submit" class="cws-button gray alt full-width mt-20">Login</button>
+                </div>
+                <!-- /.col -->
+            </div>
+
+               <div class="remember">
+                <div class="checkbox">
+                  <input id="checkbox30" type="checkbox" value="None" name="check">
+                  <label for="checkbox30">Remember Me</label>
+                </div><a href="#">Forgot Password ?</a>
+              </div>
+        </form>
+
+
+
+       
         </div>
         <div class="login-bot">
           <p>No account yet? <a href="#">Register now</a></p>
@@ -137,7 +171,15 @@
     {!!Html::script('public/tuner/js/colorpicker.js')!!}
     {!!Html::script('public/tuner/js/scripts.js')!!}
     {!!Html::script('public/js/retina.min.js')!!}
-  
+
+        @if($errors->any())
+        <script>
+            $(document).ready(function(){
+              
+                  $(".login-popup").addClass("open");
+            });
+        </script>
+        @endif
 
   </body>
 </html>
