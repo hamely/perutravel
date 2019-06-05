@@ -169,7 +169,12 @@ class itinerariosController extends AppBaseController
     
     public function tourItinerarioCreate($id)
     {
-       
-            return view('itinerarios.create',['id'=>$id]);
+        $opcion=0;
+        $alojamientos=DB::table('alojamientos')
+                    ->select('id','nombre')
+                    ->get();
+
+            return view('itinerarios.create',['id'=>$id,'alojamientos'=>$alojamientos,'opcion'=>$opcion]);
     }
+    
 }
