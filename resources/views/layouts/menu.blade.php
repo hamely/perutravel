@@ -67,3 +67,7 @@
     <a href="{!! route('itinerarios.index') !!}"><i class="fa fa-edit"></i><span>Itinerarios</span></a>
 </li>
 
+<li class="{{ Request::is('userControllers*') ? 'active' : '' }}">
+    <a href="{!! route('userControllers.index') !!}"><i class="fa fa-edit"></i><span>User Controllers</span></a>
+</li>
+

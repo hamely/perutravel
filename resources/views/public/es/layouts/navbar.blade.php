@@ -15,8 +15,23 @@
             </div>
             <div class="col-md-6 col-sm-5 text-right">
               <div class="top-right-wrap">
-                <div class="top-login"><a href="#">Iniciar sesión</a></div>
+                
               
+              <div class="lang-wrap dropdown">
+                  <div>
+                    <ul>
+                      <li><a href="#" class="lang-sel icl-en"> <span class="glyphicon glyphicon-user"></span>  Iniciar sesión <i class="fa fa-angle-down"></i></a>
+                        <ul>
+                          <li><a data-toggle="modal" data-target="#myModal">Crear cuenta</a></li>
+                          <li> 
+                              <div class="top-login"><a href="#">Iniciar sesión</a></div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
                 <div class="lang-wrap dropdown">
                   <div>
                     <ul>
