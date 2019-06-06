@@ -33,6 +33,9 @@ class toursController extends AppBaseController
     public function index(Request $request)
     {
         // $tours = $this->toursRepository->all();
+
+       
+
         $tours = DB::table('multimedia')
             ->select ('multimedia.nombre as nombremultimedia','tours.id','tours.nombre','tours.slug','tours.img','tours.descripcion','tours.estado','tours.principal','tours.organizacion')
             ->join('tours','tours.multimedia_id','=','multimedia.id')
@@ -50,6 +53,9 @@ class toursController extends AppBaseController
     public function create()
     {
         $opcion=0;
+
+        
+
         $multimedia=DB::table('multimedia')
                     ->select('id','nombre')
                     ->get();

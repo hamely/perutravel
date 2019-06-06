@@ -1,3 +1,11 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Summernote</title>
+  
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  
+</head>
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nombre', 'Nombre:') !!}
@@ -11,10 +19,10 @@
 </div>
 
 <!-- Id Tour Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('id_tour', 'Id Tour:') !!}
-    {!! Form::text('id_tour', null, ['class' => 'form-control']) !!}
-</div>
+
+    <!-- {!! Form::label('id_tour', 'Id Tour:') !!} -->
+    {!! Form::hidden('id_tour',$id, ['class' => 'form-control']) !!}
+
 
 <!-- Id Alojamiento Field -->
 <div class="form-group col-sm-6">
@@ -36,7 +44,7 @@
 <!-- Dia Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('dia', 'Dia:') !!}
-    {!! Form::text('dia', null, ['class' => 'form-control']) !!}
+    {!! Form::text('dia', $nuevoNumeroDia, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Departamento Field -->
@@ -57,3 +65,10 @@
     <a href="{!! route('itinerarios.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        $('#descripcion').summernote();
+    });
+  </script>
+  @endsection

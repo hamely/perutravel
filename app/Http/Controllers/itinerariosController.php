@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use DB;
+use Session;
+use App\Models\itinerarios;
+use Illuminate\Support\Facades\Auth;
+
 class itinerariosController extends AppBaseController
 {
     /** @var  itinerariosRepository */
@@ -42,6 +46,7 @@ class itinerariosController extends AppBaseController
      */
     public function create()
     {
+     
         return view('itinerarios.create');
     }
 
@@ -54,13 +59,33 @@ class itinerariosController extends AppBaseController
      */
     public function store(CreateitinerariosRequest $request)
     {
-        $input = $request->all();
+        // $user = Auth::user();
+        // $usuarioId=$user->id;
 
+        // $data = new itinerarios;
+        // $data->nombre = $request->nombre;
+        // $data->descripcion = $request->descripcion;
+        // $data->id_tour = $request->id_tour;
+        // $data->id_alojamiento = $request->id_alojamiento;
+        // $data->dia = $request->dia;
+        // $data->departamento = $request->departamento;
+        // $data->id_usuario=$usuarioId;
+
+     
+
+        // $data->save();
+
+        // Session::flash('Mensaje','Se guardo correctamente el itinerario');
+        // return redirect()->route('itinerarios.index');
+
+        $input = $request->all();
+        
         $itinerarios = $this->itinerariosRepository->create($input);
 
         Flash::success('Itinerarios saved successfully.');
 
-        return redirect(route('itinerarios.index'));
+        return redirect()->route('tourItinerario',$request->id_tour);
+        
     }
 
     /**
@@ -156,6 +181,7 @@ class itinerariosController extends AppBaseController
 
     public function tourItinerarioShow($id)
     {
+
         $itinerarios = DB::table('itinerarios')
             ->select ('*')
             ->where('.id_tour','=',$id)
@@ -174,7 +200,16 @@ class itinerariosController extends AppBaseController
                     ->select('id','nombre')
                     ->get();
 
-            return view('itinerarios.create',['id'=>$id,'alojamientos'=>$alojamientos,'opcion'=>$opcion]);
+        $maxDia= DB::table('itinerarios')
+                    ->select(DB::raw('max(itinerarios.dia) as dia'))
+                    ->where('id_tour','=',$id)
+                    ->get()[0];
+       
+            
+        $nuevoNumeroDia=(int)($maxDia->dia)+1;
+        // dd($maxDia);
+
+            return view('itinerarios.create',['id'=>$id,'alojamientos'=>$alojamientos,'opcion'=>$opcion,'nuevoNumeroDia'=>$nuevoNumeroDia]);
     }
     
 }
