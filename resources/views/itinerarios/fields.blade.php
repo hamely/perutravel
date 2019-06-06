@@ -12,8 +12,8 @@
 
 <!-- Id Tour Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('id_tour', 'Id Tour:') !!}
-    {!! Form::text('id_tour', null, ['class' => 'form-control']) !!}
+    <!-- {!! Form::label('id_tour', 'Id Tour:') !!} -->
+    {!! Form::hidden('id_tour',$id, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Id Alojamiento Field -->
@@ -36,7 +36,7 @@
 <!-- Dia Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('dia', 'Dia:') !!}
-    {!! Form::text('dia', null, ['class' => 'form-control']) !!}
+    {!! Form::text('dia', $nuevoNumeroDia, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Departamento Field -->
