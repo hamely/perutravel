@@ -34,18 +34,18 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>InfyOm </b>Generator</a>
+        <a href="{{ url('/') }}"><b>Perú </b>Travel</a>
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg">REGISTRAR </p>
 
         <form method="post" action="{{ url('/register') }}">
 
             {!! csrf_field() !!}
 
             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
+                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                 @if ($errors->has('name'))
@@ -54,6 +54,55 @@
                     </span>
                 @endif
             </div>
+
+            <div class="form-group has-feedback{{ $errors->has('full_name') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="full_name" value="{{ old('full_name') }}" placeholder="Full Name">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('full_name'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('full_name') }}</strong>
+                    </span>
+                @endif
+
+           
+                             
+                              
+            </div>
+            
+            <div class="form-group has-feedback">
+               
+                <select id="pais" name="pais" class="form-control">
+                    <option value="AF">Afganistán</option>
+                    <option value="AL">Albania</option>
+                    <option value="DE">Alemania</option>
+                    <option value="AD">Andorra</option>
+                   
+                </select>
+                     
+                              
+            </div>
+             <div class="form-group has-feedback">
+              
+                   <select id="documento" name="documento" class="form-control">
+                        <option value="pasaporte">PASAPORTE</option> 
+                        <option value="dni">DNI</option>
+                    </select>          
+                              
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('numero_documento') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="numero_documento" value="{{ old('numero_documento') }}" placeholder="Número del Documento">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('numero_documento'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('numero_documento') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            
 
             <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
@@ -92,7 +141,7 @@
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> I agree to the <a href="#">terms</a>
+                            <input type="checkbox"> Acepto los términos 
                         </label>
                     </div>
                 </div>
@@ -104,7 +153,7 @@
             </div>
         </form>
 
-        <a href="{{ url('/login') }}" class="text-center">I already have a membership</a>
+        <a href="{{ url('/password/reset') }}" class="text-center">Olvidé mi contraseña</a><br>
     </div>
     <!-- /.form-box -->
 </div>

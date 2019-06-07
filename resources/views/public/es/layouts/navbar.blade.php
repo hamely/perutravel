@@ -22,7 +22,7 @@
                     <ul>
                       <li><a href="#" class="lang-sel icl-en"> <span class="glyphicon glyphicon-user"></span>  Iniciar sesión <i class="fa fa-angle-down"></i></a>
                         <ul>
-                          <li><a data-toggle="modal" data-target="#myModal">Crear cuenta</a></li>
+                          <li><a href="/register">Crear cuenta</a></li>
                           <li> 
                               <div class="top-login"><a href="#">Iniciar sesión</a></div>
                           </li>
