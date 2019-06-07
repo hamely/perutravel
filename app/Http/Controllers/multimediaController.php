@@ -56,6 +56,7 @@ class multimediaController extends AppBaseController
     {
         $input = $request->all();
 
+        // dd($request->all());
         $multimedia = $this->multimediaRepository->create($input);
 
         Flash::success('Multimedia saved successfully.');

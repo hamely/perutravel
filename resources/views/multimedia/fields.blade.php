@@ -10,9 +10,10 @@
     {!! Form::text('descripcion', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Submit Field -->
+
 <div class="form-group col-sm-12">
-    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <!-- {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!} -->
+    <button type="submit" class="btn btn-success" id="submit" >Save</button>
     <a href="{!! route('multimedia.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 

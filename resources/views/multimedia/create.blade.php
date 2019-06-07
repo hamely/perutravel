@@ -10,14 +10,29 @@
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
 
+           
+
+            
             <div class="box-body">
                 <div class="panel panel-info">
                     <div class="panel-heading">SUBIR MULTIMEDIA</div>
                         <div class="panel-body">
                                    
+                        <!-- {!! Form::open(['route' => 'multimedia.store','id'=>'dropzone','class'=>'dropzone']) !!}
+                            
+
+                            
+                        {!! Form::close() !!} -->
+
                         {!! Form::open(['route' => 'multimedia.store','id'=>'dropzone','class'=>'dropzone']) !!}
-                              
-                        {!! Form::close() !!}
+                        @include('multimedia.fields')
+                                <div class="dz-message" style="height:200px;">
+                                   Subir multimedia
+                                </div>
+                      
+                            <div class="dropzone-previews"></div>
+                            
+                    {!! Form::close() !!}
 
                         </div>
            
@@ -26,16 +41,6 @@
                 <div class="row">
                   
                   
-                </div>
-            </div>
-
-            <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'multimedia.store']) !!}
-
-                        @include('multimedia.fields')
-
-                    {!! Form::close() !!}
                 </div>
             </div>
 
@@ -65,27 +70,34 @@
 
 @section('scripts')
  <script>
-       Dropzone.options.dropzone =
-         {
-                maxFilesize: 1,
-                renameFile: function(file) {
-                    var dt = new Date();
-                    var time = dt.getTime();
-                   return time+file.name;
-                },  
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                addRemoveLinks: true,
-                timeout: 5000,
-                success: function(file, response) 
-                {
-                    console.log(response);
-                },
-                error: function(file, response)
-                {
-                   return false;
-                }
+        Dropzone.options.myDropzone = {
+            autoProcessQueue: true,
+            uploadMultiple: true,
+            maxFilezise: 30,
+            maxFiles: 10,
+            
+            init: function() {
+                var submitBtn = document.querySelector("#submit");
+                myDropzone = this;
+                
+                submitBtn.addEventListener("click", function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    myDropzone.processQueue();
+                });
+                this.on("addedfile", function(file) {
+                    alert("file uploaded");
+                });
+                
+                this.on("complete", function(file) {
+                    myDropzone.removeFile(file);
+                });
+ 
+                this.on("success", 
+                    myDropzone.processQueue.bind(myDropzone)
+                );
+            }
         };
-
 
 </script>
 
