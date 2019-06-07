@@ -189,8 +189,6 @@ class itinerariosController extends AppBaseController
 
             return view('itinerarios.index',['id'=>$id,'itinerarios'=>$itinerarios]);
             // ->with('itinerarios', $itinerarios,'id', $id);
-
-        
     }
     
     public function tourItinerarioCreate($id)

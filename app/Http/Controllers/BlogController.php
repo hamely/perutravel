@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class BlogController extends AppBaseController
 {
     /** @var  BlogRepository */
@@ -42,7 +42,14 @@ class BlogController extends AppBaseController
      */
     public function create()
     {
-        return view('blogs.create');
+        $opcion=0;
+
+
+        $categoria = DB::table('categoria_blogs')
+            ->select('id', 'nombre','descripcion')
+            ->get();
+
+        return view('blogs.create',['opcion'=>$opcion,'categoria'=>$categoria]);
     }
 
     /**

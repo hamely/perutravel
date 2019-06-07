@@ -14,8 +14,20 @@
 
 <!-- Categoria Blog Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('categoria_blog_id', 'Categoria Blog Id:') !!}
-    {!! Form::text('categoria_blog_id', null, ['class' => 'form-control']) !!}
+    <!-- {!! Form::label('categoria_blog_id', 'Categoria Blog Id:') !!}
+    {!! Form::text('categoria_blog_id', null, ['class' => 'form-control']) !!} -->
+
+    {!! Form::label('categoria_blog_id', 'Categoria:') !!}
+        <select id="categoria_blog_id" name="categoria_blog_id" class='form-control'>
+            @foreach($categoria as $item )
+              @if($opcion==0)
+                <option value="{{$item->id}}">{{$item->nombre}}</option>
+              @else
+                 <option value="{{$item->id}}" {{ ($item->id == $categoria->categoria_blog_id ) ? 'selected': ''}} >{{$item->nombre}}</option>
+              @endif
+               
+            @endforeach
+        </select>
 </div>
 
 <!-- Titulo Field -->
@@ -32,14 +44,15 @@
 
 <!-- Fechapublicacion Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fechaPublicacion', 'Fechapublicacion:') !!}
-    {!! Form::text('fechaPublicacion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('fechaPublicacion', 'Fecha publicación:') !!}
+    {!! Form::date('fechaPublicacion', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Estado Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('estado', 'Estado:') !!}
     {!! Form::text('estado', null, ['class' => 'form-control']) !!}
+    
 </div>
 
 <!-- Contenido Field -->
