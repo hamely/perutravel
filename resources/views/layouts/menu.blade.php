@@ -71,3 +71,11 @@
     <a href="{!! route('userControllers.index') !!}"><i class="fa fa-edit"></i><span>User Controllers</span></a>
 </li>
 
+<li class="{{ Request::is('categoriaBlogs*') ? 'active' : '' }}">
+    <a href="{!! route('categoriaBlogs.index') !!}"><i class="fa fa-edit"></i><span>Categoria Blogs</span></a>
+</li>
+
+<li class="{{ Request::is('blogs*') ? 'active' : '' }}">
+    <a href="{!! route('blogs.index') !!}"><i class="fa fa-edit"></i><span>Blogs</span></a>
+</li>
+

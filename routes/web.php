@@ -56,3 +56,7 @@ Route::get('tourItinerario/{id?}','itinerariosController@tourItinerarioShow')->n
 Route::get('tourItinerarioCreate/{id?}','itinerariosController@tourItinerarioCreate')->name('tourItinerarioCreate');
 
 Route::resource('userControllers', 'userControllerController');
+
+Route::resource('categoriaBlogs', 'CategoriaBlogController');
+
+Route::resource('blogs', 'BlogController');
