@@ -17,22 +17,15 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">SUBIR MULTIMEDIA</div>
                         <div class="panel-body">
-                                   
-                        <!-- {!! Form::open(['route' => 'multimedia.store','id'=>'dropzone','class'=>'dropzone']) !!}
-                            
+                  
+                         <form action="{{ url('/upload') }}" enctype="multipart/form-data" files="true" class="dropzone" id="upload-file-form" name="upload-file-form">
+                            {{ csrf_field() }}
+                           
+                        </form><br>
 
-                            
-                        {!! Form::close() !!} -->
-
-                        {!! Form::open(['route' => 'multimedia.store','id'=>'dropzone','class'=>'dropzone']) !!}
+                   
                         @include('multimedia.fields')
-                                <div class="dz-message" style="height:200px;">
-                                   Subir multimedia
-                                </div>
-                      
-                            <div class="dropzone-previews"></div>
-                            
-                    {!! Form::close() !!}
+                         
 
                         </div>
            
@@ -70,34 +63,56 @@
 
 @section('scripts')
  <script>
-        Dropzone.options.myDropzone = {
-            autoProcessQueue: true,
-            uploadMultiple: true,
-            maxFilezise: 30,
-            maxFiles: 10,
-            
+      
+
+         Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#upload-file-form', {
+            paramName: 'file',
+            maxFilesize: 5, // MB
+            autoProcessQueue: false,
+            maxFiles: 20,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            addRemoveLinks: true,
+            dictRemoveFile: 'Remover foto',
+            dictDefaultMessage: "Arrastre las fotos que desea subir aquí.",
             init: function() {
-                var submitBtn = document.querySelector("#submit");
-                myDropzone = this;
-                
-                submitBtn.addEventListener("click", function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    myDropzone.processQueue();
+                this.on("success", function(file, response) {
+                    var a = document.createElement('span');
+                    a.className = "thumb-url btn btn-primary";
+                    a.innerHTML = "copy url";
+                    file.previewTemplate.appendChild(a);
                 });
-                this.on("addedfile", function(file) {
-                    alert("file uploaded");
-                });
-                
-                this.on("complete", function(file) {
-                    myDropzone.removeFile(file);
-                });
- 
-                this.on("success", 
-                    myDropzone.processQueue.bind(myDropzone)
-                );
+                 this.on("queuecomplete", function() { 
+                   this.options.autoProcessQueue = false; 
+                  }); 
+
+                  this.on("processing", function() { 
+                   this.options.autoProcessQueue = true; 
+                  }); 
+
             }
-        };
+        });
+
+           $('#submit').on('click', function(e){
+             e.preventDefault();
+             alert("hola");
+              // var data = $('#form-crearEntrada').serialize();
+              //        $.ajax({
+              //      
+              //           type: 'POST',
+              //           data:data,
+              //            success: function(data) {
+                           
+              //                    myDropzone.processQueue();
+              //                    window.setTimeout('location.reload()', 3000);
+              //           }
+                        
+              //       });
+
+
+
+
+            });
 
 </script>
 
