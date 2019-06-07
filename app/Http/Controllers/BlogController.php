@@ -99,6 +99,7 @@ class BlogController extends AppBaseController
      */
     public function edit($id)
     {
+      
         $blog = $this->blogRepository->find($id);
 
         if (empty($blog)) {
@@ -107,6 +108,7 @@ class BlogController extends AppBaseController
             return redirect(route('blogs.index'));
         }
 
+        // dd($blog);
         return view('blogs.edit')->with('blog', $blog);
     }
 

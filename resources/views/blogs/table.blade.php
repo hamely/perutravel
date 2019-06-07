@@ -8,7 +8,7 @@
         <th>Url</th>
         <th>Fechapublicacion</th>
         <th>Estado</th>
-        <th>Contenido</th>
+        <!-- <th>Contenido</th> -->
         <th>Contador</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -22,7 +22,7 @@
             <td>{!! $blog->url !!}</td>
             <td>{!! $blog->fechaPublicacion !!}</td>
             <td>{!! $blog->estado !!}</td>
-            <td>{!! $blog->contenido !!}</td>
+            <!-- <td>{!! $blog->contenido !!}</td> -->
             <td>{!! $blog->contador !!}</td>
                 <td>
                     {!! Form::open(['route' => ['blogs.destroy', $blog->id], 'method' => 'delete']) !!}
