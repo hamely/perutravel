@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>InfyOm Laravel Generator | Registration Page</title>
+    <title>Perú travel | Registro</title>
 
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -153,7 +153,7 @@
             </div>
         </form>
 
-        <a href="{{ url('/password/reset') }}" class="text-center">Olvidé mi contraseña</a><br>
+        <a href="{{ url('/password/reset') }}" class="btn btn-info">Olvidé mi contraseña</a><br>
     </div>
     <!-- /.form-box -->
 </div>
