@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="tipoCategoriaTours-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Lenguaje Id</th>
@@ -8,7 +8,7 @@
         <th>Slug</th>
         <th>Estado</th>
         <th>Descripcion</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

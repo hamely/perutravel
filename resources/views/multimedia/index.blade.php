@@ -24,3 +24,14 @@
     </div>
 @endsection
 
+@section('script')
+    <script>
+        $(document).ready(function() {
+        $('#inicio').DataTable({
+            "language": {
+            "url": "/admin/idioma/Spanish.json"
+            }
+        });
+        });
+    </script>
+@endsection

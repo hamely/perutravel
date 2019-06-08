@@ -1,11 +1,11 @@
 <div class="table-responsive">
-    <table class="table" id="languages-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Nombre</th>
         <th>Abrr</th>
         <th>Status</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

@@ -46,7 +46,9 @@
     {!! Form::label('dia', 'Dia:') !!}
     {!! Form::text('dia', $nuevoNumeroDia, ['class' => 'form-control']) !!}
 </div>
-
+<div class="form-group col-sm-6">
+    {!! Form::label('dia','')!!}
+</div>
 <!-- Departamento Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('departamento', 'Departamento:') !!}
@@ -64,6 +66,8 @@
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('itinerarios.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
+
+
 
 @section('scripts')
 <script>

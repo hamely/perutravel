@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="blogs-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Usuario Id</th>
@@ -10,7 +10,7 @@
         <th>Estado</th>
         <!-- <th>Contenido</th> -->
         <th>Contador</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

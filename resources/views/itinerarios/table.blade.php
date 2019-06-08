@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="itinerarios-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -9,7 +9,7 @@
         <th>Dia</th>
         <th>Departamento</th>
         <th>Id Usuario</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +33,7 @@
                 </td>
             </tr>
         @endforeach
+        
         </tbody>
     </table>
 </div>

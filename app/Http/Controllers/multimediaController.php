@@ -148,10 +148,14 @@ class multimediaController extends AppBaseController
             return redirect(route('multimedia.index'));
         }
 
+
         $this->multimediaRepository->delete($id);
 
         Flash::success('Multimedia deleted successfully.');
 
         return redirect(route('multimedia.index'));
+
+    
     }
+
 }
