@@ -65,7 +65,7 @@
 <!-- Email Field -->
 <div class="form-group col-sm-3">
     {!! Form::label('email', 'Email:') !!}
-    {!! Form::text('email', null, ['class' => 'form-control']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control','']) !!}
 </div>
 <div class="form-group col-sm-4">
     {!! Form::label('password', 'password') !!}
