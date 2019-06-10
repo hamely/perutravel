@@ -82,7 +82,7 @@ class userControllerController extends AppBaseController
                           'language_id'=>$request->lenguage
                             ]
                         );
-                  
+
         Flash::success('User Controller saved successfully.');
 
         return redirect(route('userControllers.index'));
@@ -121,6 +121,7 @@ class userControllerController extends AppBaseController
      */
     public function edit($id)
     {
+       $opcion=1;
        $userController = $this->userControllerRepository->find($id);
        
        $lenguage = DB::table('languages')
@@ -133,7 +134,7 @@ class userControllerController extends AppBaseController
             return redirect(route('userControllers.index'));
         }
 
-        return view('user_controllers.edit',['userController'=>$userController,'lenguage'=> $lenguage]);
+        return view('user_controllers.edit',['userController'=>$userController,'lenguage'=> $lenguage,'opcion'=> $opcion]);
     }
 
     /**
