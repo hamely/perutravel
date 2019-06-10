@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class userControllerController extends AppBaseController
 {
     /** @var  userControllerRepository */
@@ -29,10 +29,15 @@ class userControllerController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $userControllers = $this->userControllerRepository->all();
+       
+       $lenguage = DB::table('languages')->get();
 
-        return view('user_controllers.index')
-            ->with('userControllers', $userControllers);
+   
+       $userControllers = $this->userControllerRepository->all();
+
+
+        return view('user_controllers.index',['userControllers'=>$userControllers,'lenguage' =>$lenguage]);
+  
     }
 
     /**
@@ -42,7 +47,12 @@ class userControllerController extends AppBaseController
      */
     public function create()
     {
-        return view('user_controllers.create');
+        
+        $opcion=0;
+
+        $lenguage = DB::table('languages')->get();
+
+        return view('user_controllers.create',['opcion'=>$opcion,'lenguage' => $lenguage]);
     }
 
     /**
@@ -54,10 +64,25 @@ class userControllerController extends AppBaseController
      */
     public function store(CreateuserControllerRequest $request)
     {
-        $input = $request->all();
+        // $input = $request->all();
 
-        $userController = $this->userControllerRepository->create($input);
+        // $userController = $this->userControllerRepository->create($input);
 
+          DB::table('users')
+                  ->insert(
+                            [
+                          'name'=>$request->name,
+                          'privilege'=>$request->privilege,
+                          'email'=>$request->email, 
+                          'password'=>bcrypt( $request->input('Contrasenia') ),
+                          'full_name'=>$request->full_name,
+                          'document'=>$request->document,
+                          'number'=>$request->number,
+                          'country'=>$request->country,
+                          'language_id'=>$request->lenguage
+                            ]
+                        );
+                  
         Flash::success('User Controller saved successfully.');
 
         return redirect(route('userControllers.index'));
@@ -74,13 +99,17 @@ class userControllerController extends AppBaseController
     {
         $userController = $this->userControllerRepository->find($id);
 
+        $lenguage = DB::table('languages')->get();
+
         if (empty($userController)) {
             Flash::error('User Controller not found');
 
             return redirect(route('userControllers.index'));
         }
 
-        return view('user_controllers.show')->with('userController', $userController);
+        return view('user_controllers.show',['userController'=>$userController,'lenguage'=> $lenguage]);
+
+        // return view('user_controllers.show')->with('userController', $userController);
     }
 
     /**
@@ -92,15 +121,19 @@ class userControllerController extends AppBaseController
      */
     public function edit($id)
     {
-        $userController = $this->userControllerRepository->find($id);
-
+       $userController = $this->userControllerRepository->find($id);
+       
+       $lenguage = DB::table('languages')
+                        ->select('id','nombre')
+                        ->get();
+       
         if (empty($userController)) {
             Flash::error('User Controller not found');
 
             return redirect(route('userControllers.index'));
         }
 
-        return view('user_controllers.edit')->with('userController', $userController);
+        return view('user_controllers.edit',['userController'=>$userController,'lenguage'=> $lenguage]);
     }
 
     /**
@@ -113,6 +146,8 @@ class userControllerController extends AppBaseController
      */
     public function update($id, UpdateuserControllerRequest $request)
     {
+        
+
         $userController = $this->userControllerRepository->find($id);
 
         if (empty($userController)) {
@@ -120,6 +155,47 @@ class userControllerController extends AppBaseController
 
             return redirect(route('userControllers.index'));
         }
+        if(empty($request->Contrasenia))
+        {
+             
+              DB::table('users')
+                    ->where('id', $id)
+                    ->update(
+                        [
+                       
+                          'name'=>$request->name,
+                          'privilege'=>$request->privilege,
+                          'email'=>$request->email, 
+                          'full_name'=>$request->full_name,
+                          'document'=>$request->document,
+                          'number'=>$request->number,
+                          'country'=>$request->country,
+                          'language_id'=>$request->lenguage
+
+                    ]);
+               
+        }else
+        {
+
+               DB::table('users')
+                    ->where('id', $id)
+                    ->update(
+                        [
+                       
+                          'name'=>$request->name,
+                          'privilege'=>$request->privilege,
+                          'email'=>$request->email, 
+                          'password'=>bcrypt( $request->input('Contrasenia') ),
+                          'full_name'=>$request->full_name,
+                          'document'=>$request->document,
+                          'number'=>$request->number,
+                          'country'=>$request->country,
+                          'language_id'=>$request->lenguage
+
+                    ]);
+              
+        }
+
 
         $userController = $this->userControllerRepository->update($request->all(), $id);
 

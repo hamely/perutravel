@@ -29,6 +29,10 @@ class userController extends Model
     public $fillable = [
         'privilege',
         'name',
+        'full_name',
+        'document',
+        'number',
+        'country',
         'description',
         'language_id',
         'email'
@@ -55,7 +59,7 @@ class userController extends Model
      */
     public static $rules = [
         'name' => 'required',
-        'email' => 'required'
+        'email' => ['required', 'email', 'max:255', 'unique:users'],
     ];
 
     

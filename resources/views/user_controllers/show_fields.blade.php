@@ -24,8 +24,15 @@
 
 <!-- Language Id Field -->
 <div class="form-group">
-    {!! Form::label('language_id', 'Language Id:') !!}
-    <p>{!! $userController->language_id !!}</p>
+    {!! Form::label('language', 'Language:') !!}
+
+    @foreach($lenguage as $itemp)
+
+                    @if($itemp->id==$userController->language_id )
+                         <p>{!! $itemp->nombre !!}</p>
+                    @endif
+
+     @endforeach
 </div>
 
 <!-- Email Field -->

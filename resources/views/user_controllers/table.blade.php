@@ -5,7 +5,7 @@
                 <th>Privilege</th>
         <th>Name</th>
         <th>Description</th>
-        <th>Language Id</th>
+        <th>Language</th>
         <th>Email</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -16,7 +16,16 @@
                 <td>{!! $userController->privilege !!}</td>
             <td>{!! $userController->name !!}</td>
             <td>{!! $userController->description !!}</td>
-            <td>{!! $userController->language_id !!}</td>
+            <td>
+                @foreach($lenguage as $itemp)
+
+                    @if($itemp->id==$userController->language_id)
+                        {!! $itemp->nombre !!}
+
+                    @endif
+
+                @endforeach
+            </td>
             <td>{!! $userController->email !!}</td>
                 <td>
                     {!! Form::open(['route' => ['userControllers.destroy', $userController->id], 'method' => 'delete']) !!}
