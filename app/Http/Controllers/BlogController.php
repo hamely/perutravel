@@ -100,7 +100,14 @@ class BlogController extends AppBaseController
     public function edit($id)
     {
       
-        $blog = $this->blogRepository->find($id);
+        $opcion=1;
+
+
+        $categoria = DB::table('categoria_blogs')
+            ->select('*')
+            ->get();
+   
+        $blog = $this->blogRepository->find($id); //ya obtien la data del id del blog
 
         if (empty($blog)) {
             Flash::error('Blog not found');
@@ -109,7 +116,8 @@ class BlogController extends AppBaseController
         }
 
         // dd($blog);
-        return view('blogs.edit')->with('blog', $blog);
+        return view('blogs.edit',['blog'=>$blog,'categoria'=>$categoria,'opcion'=>$opcion]);
+        // return view('blogs.edit')->with('blog', $blog);
     }
 
     /**

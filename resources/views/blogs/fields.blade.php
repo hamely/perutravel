@@ -23,7 +23,7 @@
               @if($opcion==0)
                 <option value="{{$item->id}}">{{$item->nombre}}</option>
               @else
-                 <option value="{{$item->id}}" {{ ($item->id == $categoria->categoria_blog_id ) ? 'selected': ''}} >{{$item->nombre}}</option>
+                 <option value="{{$item->id}}" {{ ($item->id == $blog->categoria_blog_id ) ? 'selected': ''}} >{{$item->nombre}}</option>
               @endif
                
             @endforeach
@@ -69,8 +69,8 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
 @section('scripts')
