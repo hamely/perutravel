@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table" id="alojamientos-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Nombre</th>
         <th>Id Ubigeo</th>
         <th>Id Categoria</th>
         <th>Id Tipo Alojamiento</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

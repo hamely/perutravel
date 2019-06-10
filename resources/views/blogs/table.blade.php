@@ -1,23 +1,23 @@
 <div class="table-responsive">
-    <table class="table" id="blogs-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Usuario Id</th>
         <th>Categoria Blog Id</th>
         <th>Titulo</th>
         <th>Url</th>
-        <th>Fechapublicacion</th>
+        <th>Fecha publicación</th>
         <th>Estado</th>
         <!-- <th>Contenido</th> -->
         <th>Contador</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>
         @foreach($blogs as $blog)
             <tr>
                 <td>{!! $blog->usuario_id !!}</td>
-            <td>{!! $blog->categoria_blog_id !!}</td>
+            <td>{!! $blog->categoriablog !!}</td>
             <td>{!! $blog->titulo !!}</td>
             <td>{!! $blog->url !!}</td>
             <td>{!! $blog->fechaPublicacion !!}</td>

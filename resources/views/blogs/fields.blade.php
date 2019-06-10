@@ -7,10 +7,10 @@
   
 </head>
 <!-- Usuario Id Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('usuario_id', 'Usuario Id:') !!}
     {!! Form::text('usuario_id', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Categoria Blog Id Field -->
 <div class="form-group col-sm-6">
@@ -23,7 +23,7 @@
               @if($opcion==0)
                 <option value="{{$item->id}}">{{$item->nombre}}</option>
               @else
-                 <option value="{{$item->id}}" {{ ($item->id == $categoria->categoria_blog_id ) ? 'selected': ''}} >{{$item->nombre}}</option>
+                 <option value="{{$item->id}}" {{ ($item->id == $blog->categoria_blog_id ) ? 'selected': ''}} >{{$item->nombre}}</option>
               @endif
                
             @endforeach
@@ -37,23 +37,27 @@
 </div>
 
 <!-- Url Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('url', 'Url:') !!}
     {!! Form::text('url', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Fechapublicacion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fechaPublicacion', 'Fecha publicación:') !!}
-    {!! Form::date('fechaPublicacion', null, ['class' => 'form-control']) !!}
+    @if($opcion==0)
+    {!! Form::date('fechaPublicacion', $date, ['class' => 'form-control']) !!}
+    @else
+    {!! Form::date('fechaPublicacion', $blog->fechaPublicacion , ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Estado Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('estado', 'Estado:') !!}
     {!! Form::text('estado', null, ['class' => 'form-control']) !!}
     
-</div>
+</div> -->
 
 <!-- Contenido Field -->
 <div class="form-group col-sm-12 col-lg-12">
@@ -62,15 +66,15 @@
 </div>
 
 <!-- Contador Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('contador', 'Contador:') !!}
     {!! Form::text('contador', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
 @section('scripts')

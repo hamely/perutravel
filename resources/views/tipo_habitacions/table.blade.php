@@ -1,10 +1,10 @@
 <div class="table-responsive">
-    <table class="table" id="tipoHabitacions-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Name</th>
         <th>Descripcion</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>

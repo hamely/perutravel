@@ -1,12 +1,12 @@
 <div class="table-responsive">
-    <table class="table" id="ubigeos-table">
+    <table class="table" id="inicio">
         <thead>
             <tr>
                 <th>Codigo</th>
         <th>Departamento</th>
         <th>Provincia</th>
         <th>Distrito</th>
-                <th colspan="3">Action</th>
+                <th colspan="1">Action</th>
             </tr>
         </thead>
         <tbody>
