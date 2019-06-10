@@ -45,7 +45,11 @@
 <!-- Fechapublicacion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fechaPublicacion', 'Fecha publicación:') !!}
-    {!! Form::date('fechaPublicacion', null, ['class' => 'form-control']) !!}
+    @if($opcion==0)
+    {!! Form::date('fechaPublicacion', $date, ['class' => 'form-control']) !!}
+    @else
+    {!! Form::date('fechaPublicacion', $blog->fechaPublicacion , ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Estado Field -->
@@ -62,10 +66,10 @@
 </div>
 
 <!-- Contador Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('contador', 'Contador:') !!}
     {!! Form::text('contador', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

@@ -13,6 +13,7 @@ use Session;
 use Response;
 use DB;use Illuminate\Support\Str as Str; 
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class BlogController extends AppBaseController
 {
@@ -58,7 +59,11 @@ class BlogController extends AppBaseController
             ->select('id', 'nombre','descripcion')
             ->get();
 
-        return view('blogs.create',['opcion'=>$opcion,'categoria'=>$categoria]);
+        $fechaA = Carbon::now('America/Lima');
+        $date=$fechaA->format('Y-m-d');
+        
+        // dd($fechaSistema1);
+        return view('blogs.create',['opcion'=>$opcion,'categoria'=>$categoria,'date'=>$date]);
     }
 
     /**
@@ -82,7 +87,7 @@ class BlogController extends AppBaseController
         $data->fechaPublicacion = $request->fechaPublicacion;
         $data->estado = '1';
         $data->contenido=$request->contenido;
-        $data->contador= $request->contador;
+        $data->contador= '';
         $data->usuario_id=$usuarioId;
                   
         $data->save();
