@@ -60,3 +60,6 @@ Route::resource('userControllers', 'userControllerController');
 Route::resource('categoriaBlogs', 'CategoriaBlogController');
 
 Route::resource('blogs', 'BlogController');
+
+Route::get('/blog','PublicController@blog') ;
+
