@@ -79,11 +79,10 @@ class BlogController extends AppBaseController
         $data->contenido=$request->contenido;
         $data->contador= $request->contador;
         $data->usuario_id=$usuarioId;
-           
-
+                  
         $data->save();
 
-        Session::flash('Mensaje','Se guardo correctamente el itinerario');
+        Session::flash('Mensaje','Se guardo correctamente el blog');
         return redirect()->route('blogs.index');
         
 
