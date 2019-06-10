@@ -6,7 +6,7 @@
         <th>Categoria Blog Id</th>
         <th>Titulo</th>
         <th>Url</th>
-        <th>Fechapublicacion</th>
+        <th>Fecha publicación</th>
         <th>Estado</th>
         <!-- <th>Contenido</th> -->
         <th>Contador</th>

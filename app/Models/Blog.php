@@ -63,10 +63,10 @@ class Blog extends Model
      * @var array
      */
     public static $rules = [
-        'usuario_id' => 'required',
+        // 'usuario_id' => 'required',
         'categoria_blog_id' => 'required',
         'titulo' => 'required',
-        'url' => 'required',
+        // 'url' => 'required',
         'fechaPublicacion' => 'required',
         'contenido' => 'required'
     ];

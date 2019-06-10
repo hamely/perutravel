@@ -7,9 +7,13 @@ use App\Http\Requests\UpdateBlogRequest;
 use App\Repositories\BlogRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 use Flash;
+use Session;
 use Response;
-use DB;
+use DB;use Illuminate\Support\Str as Str; 
+use Illuminate\Support\Facades\Auth;
+
 class BlogController extends AppBaseController
 {
     /** @var  BlogRepository */
@@ -61,13 +65,35 @@ class BlogController extends AppBaseController
      */
     public function store(CreateBlogRequest $request)
     {
-        $input = $request->all();
+        $user = Auth::user();
+        $usuarioId=$user->id;
 
-        $blog = $this->blogRepository->create($input);
+       
+        $data = new Blog;
+        $data->categoria_blog_id = $request->categoria_blog_id;
+   
+        $data->titulo = $request->titulo;
+        $data->url = Str::slug($request['titulo']);
+        $data->fechaPublicacion = $request->fechaPublicacion;
+        $data->estado = '1';
+        $data->contenido=$request->contenido;
+        $data->contador= $request->contador;
+        $data->usuario_id=$usuarioId;
+           
 
-        Flash::success('Blog saved successfully.');
+        $data->save();
 
-        return redirect(route('blogs.index'));
+        Session::flash('Mensaje','Se guardo correctamente el itinerario');
+        return redirect()->route('blogs.index');
+        
+
+        // $input = $request->all();
+
+        // $blog = $this->blogRepository->create($input);
+
+        // Flash::success('Blog saved successfully.');
+
+        // return redirect(route('blogs.index'));
     }
 
     /**

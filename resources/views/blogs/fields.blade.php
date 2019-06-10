@@ -7,10 +7,10 @@
   
 </head>
 <!-- Usuario Id Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('usuario_id', 'Usuario Id:') !!}
     {!! Form::text('usuario_id', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Categoria Blog Id Field -->
 <div class="form-group col-sm-6">
@@ -37,10 +37,10 @@
 </div>
 
 <!-- Url Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('url', 'Url:') !!}
     {!! Form::text('url', null, ['class' => 'form-control']) !!}
-</div>
+</div> -->
 
 <!-- Fechapublicacion Field -->
 <div class="form-group col-sm-6">
@@ -49,11 +49,11 @@
 </div>
 
 <!-- Estado Field -->
-<div class="form-group col-sm-6">
+<!-- <div class="form-group col-sm-6">
     {!! Form::label('estado', 'Estado:') !!}
     {!! Form::text('estado', null, ['class' => 'form-control']) !!}
     
-</div>
+</div> -->
 
 <!-- Contenido Field -->
 <div class="form-group col-sm-12 col-lg-12">
