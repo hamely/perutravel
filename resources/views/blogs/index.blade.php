@@ -17,10 +17,7 @@
             <div class="box-body">
                     @include('blogs.table')
             </div>
-        </div>
-        <div class="text-center">
-        
-        </div>
+        </div>      
     </div>
 @endsection
 
@@ -31,7 +28,8 @@
             "language": {
             "url": "/admin/idioma/Spanish.json"
             }
-        });
+            });
         });
     </script>
+
 @endsection

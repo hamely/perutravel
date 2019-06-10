@@ -17,7 +17,7 @@
         @foreach($blogs as $blog)
             <tr>
                 <td>{!! $blog->usuario_id !!}</td>
-            <td>{!! $blog->categoria_blog_id !!}</td>
+            <td>{!! $blog->categoriablog !!}</td>
             <td>{!! $blog->titulo !!}</td>
             <td>{!! $blog->url !!}</td>
             <td>{!! $blog->fechaPublicacion !!}</td>

@@ -33,7 +33,12 @@ class BlogController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $blogs = $this->blogRepository->all();
+        // $blogs = $this->blogRepository->all();
+
+        $blogs=DB::table('blogs')
+            ->select('categoria_blogs.nombre as categoriablog','blogs.id','usuario_id','categoria_blog_id','titulo','url','fechaPublicacion','estado','contenido','contador')
+            ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
+            ->get();
 
         return view('blogs.index')
             ->with('blogs', $blogs);
@@ -136,7 +141,7 @@ class BlogController extends AppBaseController
 
         if (empty($blog)) {
             Flash::error('Blog not found');
-
+flash::error('blog ');
             return redirect(route('blogs.index'));
         }
 
