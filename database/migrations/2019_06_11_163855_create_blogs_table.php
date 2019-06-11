@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateBlogsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -23,6 +23,8 @@ class CreateBlogsTable extends Migration
             $table->string('estado');
             $table->string('contenido');
             $table->string('contador');
+            $table->string('autor');
+            $table->string('urlimagen');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +37,6 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('blogs');
+        Schema::dropIfExists('blogs');
     }
 }

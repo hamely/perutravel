@@ -63,3 +63,6 @@ Route::resource('blogs', 'BlogController');
 
 Route::get('/blog','PublicController@blog') ;
 
+Route::post('/images-save', 'BlogController@storeImagen');
+Route::post('/images-delete', 'BlogController@destroyImagen');
+Route::get('/images-show', 'BlogController@indexImagen');

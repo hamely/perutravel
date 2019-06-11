@@ -87,6 +87,7 @@ class BlogController extends AppBaseController
         $data->fechaPublicacion = $request->fechaPublicacion;
         $data->estado = '1';
         $data->contenido=$request->contenido;
+        $data->autor=$request->autor;
         $data->contador= '';
         $data->usuario_id=$usuarioId;
                   
@@ -204,5 +205,19 @@ flash::error('blog ');
         Flash::success('Blog deleted successfully.');
 
         return redirect(route('blogs.index'));
+    }
+
+
+    public function indexImagen()
+    {
+
+    }
+    public function destroyImagen()
+    {
+        
+    }
+    public function storeImagen()
+    {
+        
     }
 }
