@@ -63,7 +63,7 @@ Route::resource('blogs', 'BlogController');
 
 Route::get('/blog','PublicController@blog') ;
 
-Route::post('/images-save', 'BlogController@storeImagen');
+
 Route::post('/images-delete', 'BlogController@destroyImagen');
 Route::get('/images-show', 'BlogController@indexImagen');
 
@@ -71,4 +71,10 @@ Route:: POST('/images-save',
 [
 	'uses' => 'BlogController@storeImagen',
 	'as' => 'blog.save'
+]);
+
+Route:: POST('/saveContenidoBlog', 
+[
+	'uses' => 'BlogController@saveContenidoBlog',
+	'as' => 'blog.contenido'
 ]);

@@ -72,15 +72,7 @@
 </div> -->
 
 <!-- Submit Field -->
-<div class="form-group col-sm-12">
-    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+<div class="form-group col-sm-12" style="text-align: center;">
     <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        $('#contenido').summernote();
-    });
-  </script>
-  @endsection

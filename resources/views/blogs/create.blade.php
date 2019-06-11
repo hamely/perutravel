@@ -43,15 +43,20 @@
                                {!! Form::close() !!}
 
                     </div>
+                    <div style="text-align: center;">
+                         <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Subir imagen </button>
+                    </div><br>
                
                 </div>
-               {{--  <div class="row">
-                    {!! Form::open(['route' => 'blogs.store']) !!}
+                <div class="row">
+
+
+                    {!! Form::open(['id'=>'form-crearEntrada','class'=>'form-crearEntrada']) !!}
 
                         @include('blogs.fields')
 
                     {!! Form::close() !!}
-                </div> --}}
+                </div>
             </div>
 
 
@@ -59,16 +64,62 @@
     </div>
 @endsection
 @section('scripts')
- <script>
-       Dropzone.options.dropzone =
-         {
-                 paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
-                success: function (file, response) {
-                    console.log(response);
-                 }
-        };
 
+ <script>
+     
+ $(document).ready(function() {
+        $('#contenido').summernote();
+    });
+
+   Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#dropzone', {
+            paramName: 'file',
+            maxFilesize: 5, // MB
+            autoProcessQueue: false,
+            maxFiles: 20,
+            acceptedFiles: ".jpeg,.jpg,.png,.gif",
+            addRemoveLinks: false,
+            dictRemoveFile: 'Remover foto',
+            dictDefaultMessage: "Arrastre las fotos que desea subir aquí.",
+            init: function() {
+                this.on("success", function(file, response) {
+                    var a = document.createElement('span');
+                    a.className = "thumb-url btn btn-primary";
+                    
+                    a.innerHTML = "copy url";
+                    file.previewTemplate.appendChild(a);
+                });
+                 this.on("queuecomplete", function() { 
+                   this.options.autoProcessQueue = false; 
+                  }); 
+
+                  this.on("processing", function() { 
+                   this.options.autoProcessQueue = true; 
+                  }); 
+
+            }
+        });
+
+          $('#btnUpload').on('click', function(e){
+
+                e.preventDefault();
+                myDropzone.processQueue();
+                var data = $('#form-crearEntrada').serialize();
+
+                 $.ajax({
+                  url:'{{ route('blog.contenido') }}',
+                    type: 'POST',
+                    data:data,
+                     success: function(data) {
+                       
+                             console.log(data);
+                             myDropzone.processQueue();
+                             // window.setTimeout('location.reload()', 3000);
+                    }
+                    
+                });
+
+        });
 
 </script>
 

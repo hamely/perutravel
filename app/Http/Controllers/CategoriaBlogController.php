@@ -153,4 +153,6 @@ class CategoriaBlogController extends AppBaseController
 
         return redirect(route('categoriaBlogs.index'));
     }
+
+    
 }

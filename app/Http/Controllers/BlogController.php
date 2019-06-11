@@ -147,7 +147,7 @@ class BlogController extends AppBaseController
 
         if (empty($blog)) {
             Flash::error('Blog not found');
-flash::error('blog ');
+            flash::error('blog ');
             return redirect(route('blogs.index'));
         }
 
@@ -222,7 +222,7 @@ flash::error('blog ');
         $file = $request->file('file');
         $path = public_path() . '/public/blog';
 
-        
+
         $fileName = uniqid() . $file->getClientOriginalName();
 
         $file->move($path, $fileName);
@@ -233,4 +233,28 @@ flash::error('blog ');
         // $projectImage->file_name = $fileName;
         // $projectImage->save();
     }   
+
+    public function saveContenidoBlog(Request $request)
+    {
+
+        $user = Auth::user();
+        $usuarioId=$user->id;
+
+       
+        $data = new Blog;
+        $data->categoria_blog_id = $request->categoria_blog_id;
+   
+        $data->titulo = $request->titulo;
+        $data->url = Str::slug($request['titulo']);
+        $data->fechaPublicacion = $request->fechaPublicacion;
+        $data->estado = '1';
+        $data->contenido=$request->contenido;
+        $data->autor=$request->autor;
+        $data->contador= '';
+        $data->usuario_id=$usuarioId;
+                  
+        $data->save();
+           
+
+    }
 }
