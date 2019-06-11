@@ -235,11 +235,7 @@ class BlogController extends AppBaseController
 
         $blog->save();
 
-        // $projectImage = new ProjectImage();
-        // $projectImage->project_id = $id;
-        // $projectImage->user_id = auth()->user()->id;
-        // $projectImage->file_name = $fileName;
-        // $projectImage->save();
+     
     }   
 
     public function saveContenidoBlog(Request $request)
@@ -265,5 +261,22 @@ class BlogController extends AppBaseController
         $data->save();
 
 
+    }
+
+    public function saveCambioImagenBlog(Request $request)
+    {
+        $file = $request->file('file');
+        $path = public_path() . '/public/blog';
+
+
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+        $file->move($path, $fileName);
+
+        $blog = Blog::find($request->id);
+
+        $blog->urlimagen = '/public/blog'.'/'.$fileName;
+
+        $blog->save();
     }
 }

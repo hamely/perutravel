@@ -69,6 +69,7 @@
      
  $(document).ready(function() {
         $('#contenido').summernote();
+        $("#Modificar").hide();
     });
 
    Dropzone.autoDiscover = false;

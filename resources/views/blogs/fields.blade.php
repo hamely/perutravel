@@ -76,7 +76,9 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12" style="text-align: center;">
-    <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Subir imagen </button>
+     <button type="submit"  style="text-align: center;" class="btn btn-success" id="Modificar" name="Modificar">Modificar</button>
+       <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Guardar </button>
+
     <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
