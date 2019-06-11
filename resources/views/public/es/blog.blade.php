@@ -6,12 +6,8 @@
 
 
 
-    
 
-
-        <div class="row">
-
-            
+        <div class="row">            
        
 
           <div class="col-md-8">
@@ -52,6 +48,182 @@
          <br/>  <br/>  
         
 
+    <section class="small-section bg-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+             
+              <h3 class="title-section"><span>Bienvenido a nuestro blog de viajes</span></h3>
+              
+              <p>Maecenas commodo odio ut vulputate cursus. Integer in egestas lectus. Nam volutpat feugiat mi vitae mollis. Aenean tristique dolor bibendum mi scelerisque ultrices non at lorem.</p>
+              
+              
+            
+            </div>
+
+            
+            
+          </div>
+
+          
+        
+
+        <div class="col-md-8">
+                <h6 class="title-section-top font-4">CULTURA</h6>
+                <div class="cws_divider mb-25 mt-5"></div>
+
+                <div class="row">
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/1.jpg" data-at2x="pic/recomended/1@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Hotel Bohemians</h6></a>
+                  <div class="stars stars-4"></div>
+                  <div class="recom-price"><span class="font-4">$90</span> per night</div>
+                  <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                  <div class="action font-2">20%</div>
+                </div>
+                <!-- Recomended Image-->
+                
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/2.jpg" data-at2x="pic/recomended/2@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Praga, Czech Republic</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Easyhotel</h6></a>
+                  <div class="stars stars-3"></div>
+                  <div class="recom-price"><span class="font-4">$35</span> per night</div>
+                  <p class="mb-30">Mauris eget hendrerit diam. Praesent a lacinia ex.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                </div>
+                <!-- Recomended Image-->
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+
+
+            
+           
+            
+          </div>
+        </div>
+
+        <div class="col-md-8">
+                <h6 class="title-section-top font-4">NOTICIAS</h6>
+                <div class="cws_divider mb-25 mt-5"></div>
+
+                <div class="row">
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/1.jpg" data-at2x="pic/recomended/1@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Hotel Bohemians</h6></a>
+                  <div class="stars stars-4"></div>
+                  <div class="recom-price"><span class="font-4">$90</span> per night</div>
+                  <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                  <div class="action font-2">20%</div>
+                </div>
+                <!-- Recomended Image-->
+                
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/2.jpg" data-at2x="pic/recomended/2@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Praga, Czech Republic</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Easyhotel</h6></a>
+                  <div class="stars stars-3"></div>
+                  <div class="recom-price"><span class="font-4">$35</span> per night</div>
+                  <p class="mb-30">Mauris eget hendrerit diam. Praesent a lacinia ex.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                </div>
+                <!-- Recomended Image-->
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+
+
+            
+           
+            
+          </div>
+        </div>
+        
+        <div class="col-md-8">
+                <h6 class="title-section-top font-4">GASTRONOMIA</h6>
+                <div class="cws_divider mb-25 mt-5"></div>
+
+                <div class="row">
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/1.jpg" data-at2x="pic/recomended/1@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Hotel Bohemians</h6></a>
+                  <div class="stars stars-4"></div>
+                  <div class="recom-price"><span class="font-4">$90</span> per night</div>
+                  <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                  <div class="action font-2">20%</div>
+                </div>
+                <!-- Recomended Image-->
+                
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+            <!-- Recomended item-->
+            <div class="col-md-6">
+              <div class="recom-item">
+                <div class="recom-media"><a href="hotels-details.html">
+                    <div class="pic"><img src="public/pic/recomended/2.jpg" data-at2x="pic/recomended/2@2x.jpg" alt></div></a>
+                  <div class="location"><i class="flaticon-suntour-map"></i> Praga, Czech Republic</div>
+                </div>
+                <!-- Recomended Content-->
+                <div class="recom-item-body"><a href="hotels-details.html">
+                    <h6 class="blog-title">Easyhotel</h6></a>
+                  <div class="stars stars-3"></div>
+                  <div class="recom-price"><span class="font-4">$35</span> per night</div>
+                  <p class="mb-30">Mauris eget hendrerit diam. Praesent a lacinia ex.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                </div>
+                <!-- Recomended Image-->
+              </div>
+            </div>
+            <!-- ! Recomended item-->
+
+
+            
+           
+            
+          </div>
+        </div>
+        </div>
+
+        
+      </section>
 
               <div class="col-sm-6 col-xs-6 mb-30">
                 <!-- Blog item-->
@@ -222,28 +394,28 @@
                   <h2 class="widget-title alt">Popular Posts</h2>
                   <!-- item recent post-->
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="pic/blog/80x80/1.jpg" data-at2x="pic/blog/80x80/1@2x.jpg" alt></div>
+                    <div class="widget-post-media"><img src="public/pic/blog/80x80/1.jpg" data-at2x="pic/blog/80x80/1@2x.jpg" alt></div>
                     <h3 class="title"><a href="blog-single.html">Aenean a mi et risus facilisis maximus</a></h3>
                     <div class="date-recent">Mon, 03-23-2016</div>
                   </div>
                   <!-- ! item recent post-->
                   <!-- item recent post-->
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="pic/blog/80x80/2.jpg" data-at2x="pic/blog/80x80/2@2x.jpg" alt></div>
+                    <div class="widget-post-media"><img src="public/pic/blog/80x80/2.jpg" data-at2x="pic/blog/80x80/2@2x.jpg" alt></div>
                     <h3 class="title"><a href="blog-single.html">Mauris eu sapien non erat auctor aliquam</a></h3>
                     <div class="date-recent">Mon, 03-23-2016</div>
                   </div>
                   <!-- ! item recent post-->
                   <!-- item recent post-->
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="pic/blog/80x80/3.jpg" data-at2x="pic/blog/80x80/3@2x.jpg" alt></div>
+                    <div class="widget-post-media"><img src="public/pic/blog/80x80/3.jpg" data-at2x="pic/blog/80x80/3@2x.jpg" alt></div>
                     <h3 class="title"><a href="blog-single.html">Nam ut mauris in justo tempus laoreet</a></h3>
                     <div class="date-recent">Mon, 03-23-2016</div>
                   </div>
                   <!-- ! item recent post-->
                   <!-- item recent post-->
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="pic/blog/80x80/4.jpg" data-at2x="pic/blog/80x80/4@2x.jpg" alt></div>
+                    <div class="widget-post-media"><img src="public/pic/blog/80x80/4.jpg" data-at2x="pic/blog/80x80/4@2x.jpg" alt></div>
                     <h3 class="title"><a href="blog-single.html">Aenean semper risus vitae auctor dictum</a></h3>
                     <div class="date-recent">Mon, 03-23-2016</div>
                   </div>
