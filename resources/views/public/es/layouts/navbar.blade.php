@@ -82,20 +82,15 @@
               <li><a href="page-contact.html">TESTIMONIOS</a></li>
                <li class="slash">/</li>
 
-              <li><a href="page-contact.html">CONCICIONES</a></li>
+              <li><a href="page-contact.html">CONDICIONES</a></li>
                <li class="slash">/</li>
-
-              <li><a href="page-contact.html">CONTACTO</a></li>
+             
+              <li><a href="/blog">BLOG</a></li>
                <li class="slash">/</li>
               <!-- End Item With Sub-->
-              <li><a href="shop-grid.html" class="mn-has-sub">Shop <i class="fa fa-angle-down button_open"></i></a>
+              <li><a href="shop-grid.html">CONTACTO </a>
                 <!-- Sub-->
-                <ul class="mn-sub">
-                  <li><a href="shop-grid.html">Shop Grid</a></li>
-                  <li><a href="shop-cart.html">Shop Cart</a></li>
-                  <li><a href="shop-checkout.html">Shop Checkout</a></li>
-                  <li><a href="shop-single.html">Shop Single Product</a></li>
-                </ul>
+              
                 <!-- End Sub-->
               </li>
               <!-- End Item With Sub-->
