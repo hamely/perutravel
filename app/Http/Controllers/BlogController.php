@@ -216,8 +216,21 @@ flash::error('blog ');
     {
         
     }
-    public function storeImagen()
+    public function storeImagen(Request $request)
     {
         
-    }
+        $file = $request->file('file');
+        $path = public_path() . '/public/blog';
+
+        
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+        $file->move($path, $fileName);
+
+        // $projectImage = new ProjectImage();
+        // $projectImage->project_id = $id;
+        // $projectImage->user_id = auth()->user()->id;
+        // $projectImage->file_name = $fileName;
+        // $projectImage->save();
+    }   
 }

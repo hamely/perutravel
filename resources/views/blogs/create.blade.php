@@ -38,21 +38,23 @@
                     <div class="panel-body">
                         
                        
-                             {!! Form::open(['route' => 'tours.store','id'=>'dropzone','class'=>'dropzone']) !!}
+                             {!! Form::open(['route' => 'blog.save','id'=>'dropzone','class'=>'dropzone']) !!}
                                   
                                {!! Form::close() !!}
 
                     </div>
                
                 </div>
-                <div class="row">
+               {{--  <div class="row">
                     {!! Form::open(['route' => 'blogs.store']) !!}
 
                         @include('blogs.fields')
 
                     {!! Form::close() !!}
-                </div>
+                </div> --}}
             </div>
+
+
         </div>
     </div>
 @endsection
@@ -60,23 +62,11 @@
  <script>
        Dropzone.options.dropzone =
          {
-                maxFilesize: 1,
-                renameFile: function(file) {
-                    var dt = new Date();
-                    var time = dt.getTime();
-                   return time+file.name;
-                },  
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                addRemoveLinks: true,
-                timeout: 5000,
-                success: function(file, response) 
-                {
+                 paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                success: function (file, response) {
                     console.log(response);
-                },
-                error: function(file, response)
-                {
-                   return false;
-                }
+                 }
         };
 
 
