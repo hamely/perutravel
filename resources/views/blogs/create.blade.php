@@ -44,7 +44,7 @@
 
                     </div>
                     <div style="text-align: center;">
-                         <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Subir imagen </button>
+                        
                     </div><br>
                
                 </div>
@@ -76,9 +76,9 @@
             paramName: 'file',
             maxFilesize: 5, // MB
             autoProcessQueue: false,
-            maxFiles: 20,
+            maxFiles: 1,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            addRemoveLinks: false,
+            addRemoveLinks: true,
             dictRemoveFile: 'Remover foto',
             dictDefaultMessage: "Arrastre las fotos que desea subir aquí.",
             init: function() {
@@ -114,7 +114,7 @@
                        
                              console.log(data);
                              myDropzone.processQueue();
-                             // window.setTimeout('location.reload()', 3000);
+                             window.setTimeout('location.reload()', 3000);
                     }
                     
                 });

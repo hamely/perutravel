@@ -227,6 +227,14 @@ class BlogController extends AppBaseController
 
         $file->move($path, $fileName);
 
+        $id=DB::table('blogs')->max('id');
+
+        $blog = Blog::find($id);
+
+        $blog->urlimagen = '/public/blog'.'/'.$fileName;
+
+        $blog->save();
+
         // $projectImage = new ProjectImage();
         // $projectImage->project_id = $id;
         // $projectImage->user_id = auth()->user()->id;
@@ -252,9 +260,10 @@ class BlogController extends AppBaseController
         $data->autor=$request->autor;
         $data->contador= '';
         $data->usuario_id=$usuarioId;
+        $data->urlimagen='1.jpg';
                   
         $data->save();
-           
+
 
     }
 }

@@ -51,7 +51,10 @@
     {!! Form::date('fechaPublicacion', $blog->fechaPublicacion , ['class' => 'form-control']) !!}
     @endif
 </div>
-
+<div class="form-group col-sm-6">
+    {!! Form::label('autor', 'autor:') !!}
+    {!! Form::text('autor', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Estado Field -->
 <!-- <div class="form-group col-sm-6">
     {!! Form::label('estado', 'Estado:') !!}
@@ -73,6 +76,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12" style="text-align: center;">
+    <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Subir imagen </button>
     <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
