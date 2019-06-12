@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Blog;
+
 class PublicController extends Controller
 {
    public function index()
@@ -23,9 +25,11 @@ class PublicController extends Controller
       return view("public.es.blog",['data' =>$data]);
    }
 
-   public function detalleBlog()
+   public function detalleBlog($url)
    {
-      return view('public.es.detalleBlog');
+      $detalleBlog = Blog::where('url', '=', $url)->get()[0];
+      // dd($detalleBlog);
+      return view('public.es.detalleBlog',['detalleBlog'=>$detalleBlog]);
    }
 
 }
