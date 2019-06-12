@@ -35,9 +35,9 @@ class PublicController extends Controller
       return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog]);
    }
 
-   public function blogPorCategoria()
+   public function blogPorCategoria($categoria)
    {
- 
+
       return view('public.es.blog.blogPorCategoria');
    }
 }
