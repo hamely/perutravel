@@ -374,17 +374,11 @@
               <!-- widget category-->
               <div class="cws-widget">
                 <div class="widget-categories">
-                  <h2 class="widget-title">Categories</h2>
+                  <h2 class="widget-title">Categorias</h2>
                   <ul>
-                    <li class="cat-item cat-item-1"><a href="#">All</a>(155)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Family</a>(28)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Adventure</a>(15)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Romantic</a>(17)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Wildlife</a>(8)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Beach</a>(47)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Honeymoon</a>(23)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Island</a>(5)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Parks</a>(12)</li>
+                  @foreach($categoria as $item)
+                    <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a>(155)</li>
+                  @endforeach 
                   </ul>
                 </div>
               </div>
@@ -512,17 +506,11 @@
               <!-- widget category-->
               <div class="cws-widget">
                 <div class="widget-categories">
-                  <h2 class="widget-title">Categories</h2>
+                  <h2 class="widget-title">Categorias</h2>
                   <ul>
-                    <li class="cat-item cat-item-1"><a href="#">All</a>(155)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Family</a>(28)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Adventure</a>(15)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Romantic</a>(17)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Wildlife</a>(8)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Beach</a>(47)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Honeymoon</a>(23)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Island</a>(5)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Parks</a>(12)</li>
+                  @foreach($categoria as $item)
+                    <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a></li>
+                  @endforeach 
                   </ul>
                 </div>
               </div>

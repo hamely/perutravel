@@ -20,9 +20,12 @@ class PublicController extends Controller
          ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
          ->get();
 
-      //  dd($data);
+      $categoria = DB::table('categoria_blogs')
+         ->select('*') 
+         ->get();
 
-      return view("public.es.blog",['data' =>$data]);
+
+      return view("public.es.blog",['data' =>$data,'categoria'=>$categoria]);
    }
 
    public function detalleBlog($url)
