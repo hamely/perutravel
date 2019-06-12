@@ -9,7 +9,7 @@
             <!-- Blog Post image-->
             <div class="blog-item alt pb-20">
               <!-- Blog Image-->
-              @foreach($data as $item)
+             
               <div class="pic"><img src="public/pic/blog/770x370.jpg" data-at2x="pic/blog/770x370@2x.jpg" alt></div>
               <!-- title, author...-->
               <div class="blog-item-data clearfix">

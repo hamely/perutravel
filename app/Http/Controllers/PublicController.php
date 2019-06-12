@@ -14,7 +14,7 @@ class PublicController extends Controller
    public function blog()
    {
       $data = DB::table('blogs')
-         ->select('blogs.descripcioncorta','blogs.fechaPublicacion','blogs.id','blogs.titulo','blogs.contenido','blogs.urlimagen','categoria_blogs.nombre as tipoblog')
+         ->select('blogs.url','blogs.descripcioncorta','blogs.fechaPublicacion','blogs.id','blogs.titulo','blogs.contenido','blogs.urlimagen','categoria_blogs.nombre as tipoblog')
          ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
          ->get();
 
@@ -23,5 +23,9 @@ class PublicController extends Controller
       return view("public.es.blog",['data' =>$data]);
    }
 
+   public function detalleBlog()
+   {
+      return view('public.es.detalleBlog');
+   }
 
 }

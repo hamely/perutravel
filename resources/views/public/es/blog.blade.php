@@ -243,7 +243,10 @@
                   <h6 class="blog-title">{{$item->titulo}}</h6></a>
                 <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                 <!-- Text Intro-->
-                <p> {{$item->descripcioncorta}} </p><a href="/detalleBlog" class="blog-button">Leer más</a>
+                <!-- <p> {{$item->descripcioncorta}} </p><a href="/detalleBlog" class="blog-button">Leer más</a> -->
+
+                <p> {{$item->descripcioncorta}} </p><a href="{{route('detalleBlog',['blog'=>$item->url])}}" class="blog-button">Leer más</a>
+               
               </div>
             </div>
             @endforeach
