@@ -374,7 +374,7 @@
               <!-- widget category-->
               <div class="cws-widget">
                 <div class="widget-categories">
-                  <h2 class="widget-title">Categorias</h2>
+                  <h2 class="widget-title">OTRO</h2>
                   <ul>
                   @foreach($categoria as $item)
                     <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a>(155)</li>
@@ -509,7 +509,8 @@
                   <h2 class="widget-title">Categorias</h2>
                   <ul>
                   @foreach($categoria as $item)
-                    <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a></li>
+                    <!-- <li class="cat-item cat-item-1"><a href="/blogPorCategoria">{{$item->nombre}}</a></li> -->
+                    <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blogCategoria'=>$item->nombre])}}">{{$item->nombre}}</a></li>  
                   @endforeach 
                   </ul>
                 </div>

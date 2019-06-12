@@ -63,9 +63,11 @@ Route::resource('blogs', 'BlogController');
 
 Route::get('/blog','PublicController@blog') ;
 
+// Route::get('/blogPorCategoria','PublicController@blogPorCategoria');
+
+Route::get('/blogPorCategoria/{categoria?}',['uses'=>'PublicController@blogPorCategoria'])->name('blogPorCategoria');
 // Route::get('/detalleBlog','PublicController@detalleBlog');
 Route::get('/detalle/{slug?}',['uses'=>'PublicController@detalleBlog'])->name('detalleBlog');
-// Route::get('{lang?}/tours/detalle/{slug?}/{can?}', ['uses' => 'PublicController@tour'])->name('detalleEsTour');
 
 Route::post('/images-delete', 'BlogController@destroyImagen');
 Route::get('/images-show', 'BlogController@indexImagen');

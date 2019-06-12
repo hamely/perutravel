@@ -25,14 +25,19 @@ class PublicController extends Controller
          ->get();
 
 
-      return view("public.es.blog",['data' =>$data,'categoria'=>$categoria]);
+      return view("public.es.blog.blog",['data' =>$data,'categoria'=>$categoria]);
    }
 
    public function detalleBlog($url)
    {
       $detalleBlog = Blog::where('url', '=', $url)->get()[0];
       // dd($detalleBlog);
-      return view('public.es.detalleBlog',['detalleBlog'=>$detalleBlog]);
+      return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog]);
    }
 
+   public function blogPorCategoria()
+   {
+ 
+      return view('public.es.blog.blogPorCategoria');
+   }
 }
