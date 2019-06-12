@@ -39,7 +39,8 @@ class Blog extends Model
         'contenido',
         'contador',
         'autor',
-        'urlimagen'
+        'urlimagen',
+        'descripcioncorta'
     ];
 
     /**
@@ -58,7 +59,8 @@ class Blog extends Model
         'contenido' => 'string',
         'contador' => 'string',
         'autor'=>'string',
-        'urlimagen'=>'string'
+        'urlimagen'=>'string',
+        'descripcioncorta'=>'string'
     ];
 
     /**
@@ -73,7 +75,8 @@ class Blog extends Model
         // 'url' => 'required',
         'fechaPublicacion' => 'required',
         'contenido' => 'required',
-        'autor' => 'required'
+        'autor' => 'required',
+        'descripcioncorta'=>'required'
     ];
 
     

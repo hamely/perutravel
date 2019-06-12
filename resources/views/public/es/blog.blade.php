@@ -232,19 +232,21 @@
         <div class="row">
           <div class="col-md-8 mb-60">
             <!-- Blog item-->
+            @foreach($data as $item)
             <div class="blog-item clearfix mb-30 border">
               <!-- Blog Image-->
               <div class="blog-media"><a href="blog-single.html">
-                  <div class="pic"><img src="public/pic/blog/270x270/1.jpg" data-at2x="pic/blog/270x270/1@2x.jpg" alt></div></a></div>
+                  <div class="pic"><img src="{{ $item->urlimagen}}" data-at2x="pic/blog/270x270/1@2x.jpg" alt  style="width: 270px; height: 270px;"></div></a></div>
               <!-- blog body-->
               <div class="blog-item-body clearfix">
                 <!-- title--><a href="blog-single.html">
-                  <h6 class="blog-title">Aenean convallis odio quis dui tempor, id vulputate quam varius</h6></a>
-                <div class="blog-item-data">Mon, 03-23-2016</div>
+                  <h6 class="blog-title">{{$item->titulo}}</h6></a>
+                <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                 <!-- Text Intro-->
-                <p>Donec placerat in arcu non efficitur. Sed vehicula ac mi sit amet accumsan. Mauris blandit arcu justo, porta dictum tortor convallis vitae. Cras faucibus lorem nec urna congue, vel eleifend tellus blandit. </p><a href="blog-single.html" class="blog-button">Read more</a>
+                <p> {{$item->descripcioncorta}} </p><a href="blog-single.html" class="blog-button">Leer más</a>
               </div>
             </div>
+            @endforeach
             <!-- ! Blog item-->
             <!-- Blog item-->
             <div class="blog-item clearfix mb-30 border">

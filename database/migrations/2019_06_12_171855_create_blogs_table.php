@@ -13,18 +13,19 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+            Schema::create('blogs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('usuario_id');
             $table->string('categoria_blog_id');
             $table->string('titulo');
+            $table->string('descripcioncorta');
             $table->string('url');
             $table->string('fechaPublicacion');
             $table->string('estado');
             $table->string('contenido');
             $table->string('contador');
             $table->string('autor');
-            $table->string('urlimagen');
+            $table->string('urlimagen')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

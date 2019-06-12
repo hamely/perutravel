@@ -83,6 +83,7 @@ class BlogController extends AppBaseController
         $data->categoria_blog_id = $request->categoria_blog_id;
    
         $data->titulo = $request->titulo;
+        $data->descripcioncorta= $request->descripcioncorta;
         $data->url = Str::slug($request['titulo']);
         $data->fechaPublicacion = $request->fechaPublicacion;
         $data->estado = '1';
@@ -249,6 +250,7 @@ class BlogController extends AppBaseController
         $data->categoria_blog_id = $request->categoria_blog_id;
    
         $data->titulo = $request->titulo;
+        $data->descripcioncorta= $request->descripcioncorta;
         $data->url = Str::slug($request['titulo']);
         $data->fechaPublicacion = $request->fechaPublicacion;
         $data->estado = '1';

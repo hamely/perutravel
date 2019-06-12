@@ -36,6 +36,10 @@
     {!! Form::text('titulo', null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-12">
+    {!! Form::label('descripcioncorta', 'Descripcion corta:') !!}
+    {!! Form::text('descripcioncorta', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Url Field -->
 <!-- <div class="form-group col-sm-6">
     {!! Form::label('url', 'Url:') !!}

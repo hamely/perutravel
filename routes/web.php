@@ -84,3 +84,4 @@ Route:: POST('/saveCambioImagenBlog',
 	'uses' => 'BlogController@saveCambioImagenBlog',
 	'as' => 'blog.cambioImagen'
 ]);
+
