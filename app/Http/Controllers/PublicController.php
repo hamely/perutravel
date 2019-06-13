@@ -38,6 +38,23 @@ class PublicController extends Controller
    public function blogPorCategoria($categoria)
    {
 
-      return view('public.es.blog.blogPorCategoria');
+      $idCategoria=DB::table('categoria_blogs')
+      ->select('id')
+      ->where('nombre','=',$categoria)
+      ->get();
+      
+      $id=0;
+
+         foreach($idCategoria as $item)
+         {
+            $id=$item->id;
+         }
+    
+         $blog=DB::table('blogs')
+            ->select('*')
+            ->where('categoria_blog_id','=',$id)
+            ->get();
+
+      return view('public.es.blog.blogPorCategoria',['blog'=>$blog]);
    }
 }

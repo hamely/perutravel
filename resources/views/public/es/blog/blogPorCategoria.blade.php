@@ -10,6 +10,7 @@
               <!-- Blog Post-->
               <div class="col-lg-6 mb-30">
                 <!-- Blog item-->
+                
                 <div class="blog-item clearfix border">
                   <!-- Blog Image-->
                   <div class="blog-media"><a href="blog-single.html">
