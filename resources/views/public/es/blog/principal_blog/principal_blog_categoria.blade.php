@@ -1,6 +1,6 @@
-<div id="procesoCarga">
-  
-</div>
+<div id="procesoCarga" style="position: absolute;z-index: 100;margin-left: 580px;margin-top: 300px;">
+            
+            </div>
 @foreach($blog as $item)
               <div class="col-lg-6 mb-30">
                 <!-- Blog item-->
