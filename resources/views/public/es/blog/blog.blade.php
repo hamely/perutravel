@@ -80,7 +80,7 @@
                               <!-- <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div> -->
                             </div>
                             <!-- Recomended Content-->
-                            <div class="recom-item-body"><a href="hotels-details.html">
+                            <div class="recom-item-body"><a href="{{route('detalleBlog',['blog'=>$itemp->url])}}">
                                 <h6 class="blog-title">{{$itemp->titulo}}</h6></a>
                               <!-- <div class="stars stars-4"></div>
                               <div class="recom-price"><span class="font-4">$90</span> per night</div> -->
@@ -315,29 +315,29 @@
               </div>
               <!-- ! widget archive-->
               <!-- widget comments-->
-              <div class="cws-widget">
-                <div class="widget-comments">
-                  <h2 class="widget-title">Recent Comments</h2>
-                  <ul>
-                    <li>
-                      <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Nullam interdum orci vitae mi mollis</a></div>
-                      <p>Nullam a porta massa. Sed elit purus, mollis id sollicitudin ac diam...</p>
-                    </li>
-                    <li>
-                      <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Integer in lacus id nisi posuere euismod</a></div>
-                      <p>Praesent et convallis purus, laoreet mattis sapien. Sed bibendum ante...</p>
-                    </li>
-                    <li>
-                      <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Quisque viverra ipsum a felis gravida auctor</a></div>
-                      <p>Proin non ipsum ipsum. Nam varius arcu et metus pellentesque, ac lobortis...</p>
-                    </li>
-                    <li>
-                      <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Donec id nibh vel ante tempus egestas</a></div>
-                      <p>Proin mollis nibh elit, in dapibus ligula tristique eu. Quisque varius ante...</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-comments">
+                    <h2 class="widget-title">Recent Comments</h2>
+                    <ul>
+                      <li>
+                        <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Nullam interdum orci vitae mi mollis</a></div>
+                        <p>Nullam a porta massa. Sed elit purus, mollis id sollicitudin ac diam...</p>
+                      </li>
+                      <li>
+                        <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Integer in lacus id nisi posuere euismod</a></div>
+                        <p>Praesent et convallis purus, laoreet mattis sapien. Sed bibendum ante...</p>
+                      </li>
+                      <li>
+                        <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Quisque viverra ipsum a felis gravida auctor</a></div>
+                        <p>Proin non ipsum ipsum. Nam varius arcu et metus pellentesque, ac lobortis...</p>
+                      </li>
+                      <li>
+                        <div class="widget-comments-title"><a href="#">Phillip Ferguson </a>on <a href="#" class="title">Donec id nibh vel ante tempus egestas</a></div>
+                        <p>Proin mollis nibh elit, in dapibus ligula tristique eu. Quisque varius ante...</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div> -->
               <!-- ! widget comments-->
             </aside>
             
@@ -357,16 +357,16 @@
           <div class="col-md-4 sidebar">
             <aside class="sb-right pb-50-imp">
               <!-- widget search-->
-              <div class="cws-widget">
-                <div class="widget-search">
-                  <form role="search" method="get" action="#" class="search-form">
-                    <label><span class="screen-reader-text">Where will you go next?</span>
-                      <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
-                    </label>
-                    <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
-                  </form>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-search">
+                    <form role="search" method="get" action="#" class="search-form">
+                      <label><span class="screen-reader-text">Where will you go next?</span>
+                        <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
+                      </label>
+                      <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
+                    </form>
+                  </div>
+                </div> -->
               <!-- ! widget search-->
               <!-- widget category-->
               <div class="cws-widget">
@@ -385,33 +385,14 @@
                 <div class="widget-post">
                   <h2 class="widget-title alt">ÚLTIMOS POST</h2>
                   <!-- item recent post-->
+                  @foreach($data as $item)
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/1.jpg" data-at2x="pic/blog/80x80/1@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean a mi et risus facilisis maximus</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
+                    <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="width:80px; height:80px"></div>
+                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,60)!!}.</a></h3>
+                    <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/2.jpg" data-at2x="pic/blog/80x80/2@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Mauris eu sapien non erat auctor aliquam</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/3.jpg" data-at2x="pic/blog/80x80/3@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Nam ut mauris in justo tempus laoreet</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/4.jpg" data-at2x="pic/blog/80x80/4@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean semper risus vitae auctor dictum</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
+                  @endforeach
+                
                 </div>
               </div>
               <!-- ! widget post-->
