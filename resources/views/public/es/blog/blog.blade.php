@@ -53,9 +53,9 @@
           <div class="row">
             <div class="col-md-8" style="margin-top: -80px;">
              
-              <h3 class="title-section"><span>Bienvenido a nuestro blog de viajes</span></h3>
+              <h3 class="title-section" style="text-align: center;"><span>Bienvenido a nuestro blog de viajes</span></h3>
               
-              <p>Maecenas commodo odio ut vulputate cursus. Integer in egestas lectus. Nam volutpat feugiat mi vitae mollis. Aenean tristique dolor bibendum mi scelerisque ultrices non at lorem.</p>
+              <p>¡Hola! Nos encanta viajar por el Perú para descubrir su riqueza natural y cultural. Queremos contagiarte esta pasión y entusiasmo para que disfrutes al máximo la belleza del país y sus tesoros ocultos. ¡Únete a esta aventura y tomemos juntos el mismo camino!</p>
               
               
             
@@ -387,7 +387,7 @@
                   <!-- item recent post-->
                   @foreach($data as $item)
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="width:80px; height:80px"></div>
+                    <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="height:60px"></div>
                     <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,60)!!}.</a></h3>
                     <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
