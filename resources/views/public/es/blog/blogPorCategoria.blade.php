@@ -1,16 +1,15 @@
 @extends('public.es.layouts.master')
 
 @section('content')
-
 <div class="content-body">
       <div class="container page">
         <div class="row masonry">
           <div class="col-md-12">
             <div class="row">
               <!-- Blog Post-->
+              @foreach($blog as $item)
               <div class="col-lg-6 mb-30">
                 <!-- Blog item-->
-                @foreach($blog as $item)
                 <div class="blog-item clearfix border">
                   <!-- Blog Image-->
                   <div class="blog-media"><a href="blog-single.html">
@@ -27,18 +26,22 @@
                     <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="blog-single.html" class="blog-button">Leer más</a>
                   </div>
                 </div>
-                @endforeach()
                 <!-- ! Blog item-->
               </div>
+              @endforeach
               <!-- ! Blog Post-->
+          
 
-            
+       
            
+        
+            
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
 @endsection
 

@@ -362,21 +362,7 @@
 
 
             </div>
-            <!-- pagination-->
-            <div class="row mt-0">
-              <nav class="text-center">
-                <ul class="pagination">
-                  <li><a href="#" aria-label="Previous"><span class="fa fa-angle-left"></span></a></li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#" class="active">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">...</a></li>
-                  <li><a href="#">23</a></li>
-                  <li><a href="#" aria-label="Next"><span class="fa fa-angle-right"></span></a></li>
-                </ul>
-              </nav>
-            </div>
-            <!-- ! pagination-->
+            
           </div>
           <div class="col-md-4 sidebar">
             <aside class="sb-right pb-50-imp">
@@ -398,7 +384,7 @@
                   <h2 class="widget-title">Categorias</h2>
                   <ul>
                         @foreach($categoria as $item)
-                            <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a>(155)</li>
+                            <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}">{{$item->nombre}}</a>(155)</li>
                         @endforeach 
                   </ul>
                 </div>
