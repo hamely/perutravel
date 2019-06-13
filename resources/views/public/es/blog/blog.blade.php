@@ -71,46 +71,36 @@
                 <div class="cws_divider mb-25 mt-5"></div>
 
                 <div class="row">
-            <!-- Recomended item-->
-            <div class="col-md-6">
-              <div class="recom-item">
-                <div class="recom-media"><a href="hotels-details.html">
-                    <div class="pic"><img src="public/pic/recomended/1.jpg" data-at2x="pic/recomended/1@2x.jpg" alt></div></a>
-                  <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
-                </div>
-                <!-- Recomended Content-->
-                <div class="recom-item-body"><a href="hotels-details.html">
-                    <h6 class="blog-title">Hotel Bohemians</h6></a>
-                  <div class="stars stars-4"></div>
-                  <div class="recom-price"><span class="font-4">$90</span> per night</div>
-                  <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
-                  <div class="action font-2">20%</div>
-                </div>
-                <!-- Recomended Image-->
+                    <!-- Recomended item-->
+                    @foreach($cultura as $itemp)
+                        <div class="col-md-6">
+                          <div class="recom-item">
+                            <div class="recom-media"><a href="hotels-details.html">
+                                <div class="pic"><img src="{{ $itemp->urlimagen}}" data-at2x="pic/recomended/1@2x.jpg" style="height: 300px"></div></a>
+                              <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
+                            </div>
+                            <!-- Recomended Content-->
+                            <div class="recom-item-body"><a href="hotels-details.html">
+                                <h6 class="blog-title">Hotel Bohemians</h6></a>
+                              <div class="stars stars-4"></div>
+                              <div class="recom-price"><span class="font-4">$90</span> per night</div>
+                              <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                              <div class="action font-2">20%</div>
+                            </div>
+                            <!-- Recomended Image-->
+                            
+                          </div>
+                        </div>
+                    <!-- ! Recomended item-->
+                    @endforeach
                 
+              <div style="text-align: center;">
+                    <a href="{{route('blogPorCategoria',['blog'=>'cultura'])}}" class="cws-button alt">Ver más</a>
               </div>
-            </div>
-            <!-- ! Recomended item-->
-            <!-- Recomended item-->
-            <div class="col-md-6">
-              <div class="recom-item">
-                <div class="recom-media"><a href="hotels-details.html">
-                    <div class="pic"><img src="public/pic/recomended/2.jpg" data-at2x="pic/recomended/2@2x.jpg" alt></div></a>
-                  <div class="location"><i class="flaticon-suntour-map"></i> Praga, Czech Republic</div>
-                </div>
-                <!-- Recomended Content-->
-                <div class="recom-item-body"><a href="hotels-details.html">
-                    <h6 class="blog-title">Easyhotel</h6></a>
-                  <div class="stars stars-3"></div>
-                  <div class="recom-price"><span class="font-4">$35</span> per night</div>
-                  <p class="mb-30">Mauris eget hendrerit diam. Praesent a lacinia ex.</p><a href="hotels-details.html" class="recom-button">Read more</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
-                </div>
-                <!-- Recomended Image-->
-              </div>
-            </div>
-            <!-- ! Recomended item-->
-           
-            
+         
+                   
+
+
           </div>
         </div>
 
