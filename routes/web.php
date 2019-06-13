@@ -68,7 +68,7 @@ Route:: get('/listar_blog',
 	'as' => 'listar_blog'
 ]);
 
-Route:: get('/listar_categoria_blog', 
+Route:: get('/listar_categoria_blog/{categoria?}', 
 [
 	'uses' => 'PublicController@blogPorCategoria',
 	'as' => 'listar_categoria_blog'

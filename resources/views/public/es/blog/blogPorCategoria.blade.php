@@ -51,17 +51,17 @@ $(document).on('click','.pagination a', function(e){
 
     e.preventDefault();
     var page=$(this).attr('href').split('page=')[1];
-    
+    $('#procesoCarga').html('<div class="loading"><img src="images/loader.gif" alt="loading" /><br/>Un momento, por favor...</div>');
      $.ajax({                        
-                url:'{{ route('listar_categoria_blog') }}',
-                data:{categoria:{{$categoria}},page:page},
+                url:'{{ route('listar_categoria_blog') }}'+"/{{$categoria}}",
+                data:{page:page},
                 type: 'GET',           
                 dataType:'json',
                 success: function(data)             
                 {
-                console.log(data);
+          
                   $("#principal_categoria_blog").html(data);
-
+                 
                 }
         });  
 

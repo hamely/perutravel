@@ -64,12 +64,12 @@ class PublicController extends Controller
          $blog=DB::table('blogs')
             ->select('*')
             ->where('categoria_blog_id','=',$id)
-            ->paginate(4);
+            ->paginate(2);
 
             
          if($request->ajax()) 
          {
-            return $request->categoria;
+            
             return response()->json(view("public.es.blog.principal_blog.principal_blog_categoria",compact('blog'))->render());
          }
 

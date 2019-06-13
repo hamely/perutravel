@@ -1,3 +1,6 @@
+<div id="procesoCarga">
+  
+</div>
 @foreach($blog as $item)
               <div class="col-lg-6 mb-30">
                 <!-- Blog item-->
@@ -17,5 +20,5 @@
                 </div>
                 <!-- ! Blog item-->
               </div>
-              @endforeach
-              {!! $blog->render() !!}
+@endforeach
+{!! $blog->render() !!}
