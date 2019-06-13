@@ -6,6 +6,7 @@
         <div class="row masonry">
           <div class="col-md-12">
             <div class="row" id="principal_categoria_blog">
+              
               <!-- Blog Post-->
               @foreach($blog as $item)
               <div class="col-lg-6 mb-30">
@@ -51,7 +52,7 @@ $(document).on('click','.pagination a', function(e){
 
     e.preventDefault();
     var page=$(this).attr('href').split('page=')[1];
-    $('#procesoCarga').html('<div class="loading"><img src="images/loader.gif" alt="loading" /><br/>Un momento, por favor...</div>');
+    $('#procesoCarga').html('<div class="loading"><img src="/public/img/carga2.gif" alt="loading" /><br/></div>');
      $.ajax({                        
                 url:'{{ route('listar_categoria_blog') }}'+"/{{$categoria}}",
                 data:{page:page},
@@ -61,7 +62,7 @@ $(document).on('click','.pagination a', function(e){
                 {
           
                   $("#principal_categoria_blog").html(data);
-                 
+
                 }
         });  
 
