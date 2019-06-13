@@ -241,16 +241,16 @@
           <div class="col-md-4 sidebar">
             <aside class="sb-right pb-50-imp">
               <!-- widget search-->
-              <div class="cws-widget">
-                <div class="widget-search">
-                  <form role="search" method="get" action="#" class="search-form">
-                    <label><span class="screen-reader-text">Where will you go next?</span>
-                      <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
-                    </label>
-                    <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
-                  </form>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-search">
+                    <form role="search" method="get" action="#" class="search-form">
+                      <label><span class="screen-reader-text">Where will you go next?</span>
+                        <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
+                      </label>
+                      <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
+                    </form>
+                  </div>
+                </div> -->
               <!-- ! widget search-->
               <!-- widget category-->
               <div class="cws-widget">
