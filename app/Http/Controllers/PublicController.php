@@ -45,11 +45,12 @@ class PublicController extends Controller
 
       //Detalle de cada blog
       $detalleBlog = Blog::where('url', '=', $url)->get()[0];
+     
       // fin
 
       $post= DB::table('blogs')
          ->select('*')
-         ->paginate(8);
+         ->paginate(4);
 
       return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog,'tipocategoria'=>$tipocategoria,'post'=>$post]);
    }

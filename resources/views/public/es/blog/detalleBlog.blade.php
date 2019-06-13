@@ -1,3 +1,8 @@
+<meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Your Website Title" />
+  <meta property="og:description"   content="Your description" />
+  <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
 @extends('public.es.layouts.master')
 
 @section('content')
@@ -29,7 +34,9 @@
               <!-- Post Tags-->
               <div class="blog-tags mb-40">
                 <div class="blog-nav-tags"> <i class="flaticon-suntour-tag"></i><a href="#">Travel</a>, <a href="#">Beach</a>, <a href="#">Family</a></div>
-                <div class="blog-nav-share align-right mt-lg-0"> <a href="#" class="cws-social fa fa-twitter"></a><a href="#" class="cws-social fa fa-facebook"></a><a href="#" class="cws-social fa fa-google-plus"></a><a href="#" class="cws-social fa fa-linkedin"></a></div>
+                <div class="blog-nav-share align-right mt-lg-0"> <a href="#" class="cws-social fa fa-twitter"></a>
+                <a href="#" class="cws-social fa fa-facebook"></a>
+                <a href="#" class="cws-social fa fa-google-plus"></a><a href="#" class="cws-social fa fa-linkedin"></a></div>
               </div>
             </div>
          
@@ -207,10 +214,25 @@
       </div>
     </div>
 
+    <div id="fb-root"></div>
 
+    <div class="fb-share-button" 
+        data-href="{{route('detalleBlog',['blog'=>$detalleBlog->url])}}" 
+        data-layout="button_count">
+    </div>
+    <!-- <a href="http://www.facebook.com/sharer.php?u={{route('detalleBlog',['blog'=>$detalleBlog->url])}}&t={!!$detalleBlog->titulo!!};display=popup&amp; " target="_blank">Compartir en Facebook</a> -->
+
+    
 @endsection
 
 @section('script')
-  
+
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 @endsection
