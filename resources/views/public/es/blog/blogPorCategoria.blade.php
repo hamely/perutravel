@@ -16,12 +16,12 @@
                       <div class="pic"><img src="{{ $item->urlimagen}}" data-at2x="pic/blog/270x270/1@2x.jpg" alt style="width:270px; height:270px;"></div></a></div>
                   <!-- blog body-->
                   <div class="blog-item-body clearfix">
-                    <!-- title--><a href="blog-single.html">
+                    <!-- title--><a href="{{route('detalleBlog',['blog'=>$item->url])}}">
                       <h6 class="blog-title">{{$item->titulo}}</h6></a>
                     <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                     <!-- Text Intro-->
                     
-                   <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="blog-single.html" class="blog-button">Leer más</a>
+                   <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="{{route('detalleBlog',['blog'=>$item->url])}}" class="blog-button">Leer más</a>
                   </div>
                 </div>
                 <!-- ! Blog item-->

@@ -234,7 +234,7 @@
                   <div class="pic"><img src="{{ $item->urlimagen}}" data-at2x="pic/blog/270x270/1@2x.jpg" alt  style="width: 270px; height: 270px;"></div></a></div>
               <!-- blog body-->
               <div class="blog-item-body clearfix">
-                <!-- title--><a href="blog-single.html">
+                <!-- title--><a href="{{route('detalleBlog',['blog'=>$item->url])}}">
                   <h6 class="blog-title">{{$item->titulo}}</h6></a>
                 <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                 <!-- Text Intro-->
@@ -384,7 +384,7 @@
                   <h2 class="widget-title">Categorias</h2>
                   <ul>
                         @foreach($categoria as $item)
-                            <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}">{{$item->nombre}}</a>(155)</li>
+                            <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}">{{$item->nombre}}</a></li>
                         @endforeach 
                   </ul>
                 </div>
