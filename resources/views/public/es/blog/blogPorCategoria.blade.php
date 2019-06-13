@@ -21,7 +21,10 @@
                       <h6 class="blog-title">{{$item->titulo}}</h6></a>
                     <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                     <!-- Text Intro-->
-                    <p>{{$item->descripcioncorta}}</p><a href="blog-single.html" class="blog-button">Leer más</a>
+                    
+
+
+                    <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="blog-single.html" class="blog-button">Leer más</a>
                   </div>
                 </div>
                 @endforeach()
