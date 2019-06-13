@@ -75,16 +75,16 @@
                     @foreach($cultura as $itemp)
                         <div class="col-md-6">
                           <div class="recom-item">
-                            <div class="recom-media"><a href="hotels-details.html">
+                            <div class="recom-media"><a href="{{route('detalleBlog',['blog'=>$itemp->url])}}">
                                 <div class="pic"><img src="{{ $itemp->urlimagen}}" data-at2x="pic/recomended/1@2x.jpg" style="height: 300px"></div></a>
-                              <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div>
+                              <!-- <div class="location"><i class="flaticon-suntour-map"></i> Istanbul, Turkey</div> -->
                             </div>
                             <!-- Recomended Content-->
                             <div class="recom-item-body"><a href="hotels-details.html">
                                 <h6 class="blog-title">{{$itemp->titulo}}</h6></a>
                               <!-- <div class="stars stars-4"></div>
                               <div class="recom-price"><span class="font-4">$90</span> per night</div> -->
-                              <p class="mb-30">{!!str_limit($itemp->descripcioncorta,60)!!}</p><a href="hotels-details.html" class="recom-button"></a><a href="hotels-details.html" class="cws-button small alt">Leer más</a>
+                              <p class="mb-30">{!!str_limit($itemp->descripcioncorta,70)!!}</p><a href="" class="recom-button"></a><a href="{{route('detalleBlog',['blog'=>$itemp->url])}}" class="cws-button small alt">Leer más</a>
                               <!-- <div class="action font-2">20%</div> -->
                             </div>
                             <!-- Recomended Image-->
