@@ -115,31 +115,25 @@
           <div class="col-md-4 sidebar">
             <aside class="sb-right pb-50-imp">
               <!-- widget search-->
-              <div class="cws-widget">
-                <div class="widget-search">
-                  <form role="search" method="get" action="#" class="search-form">
-                    <label><span class="screen-reader-text">Where will you go next?</span>
-                      <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
-                    </label>
-                    <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
-                  </form>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-search">
+                    <form role="search" method="get" action="#" class="search-form">
+                      <label><span class="screen-reader-text">Where will you go next?</span>
+                        <input type="search" placeholder="Where will you go next?" value="" name="s" title="Search:" class="search-field">
+                      </label>
+                      <button type="submit" class="search-submit"><i class="flaticon-suntour-search"></i></button>
+                    </form>
+                  </div>
+                </div> -->
               <!-- ! widget search-->
               <!-- widget category-->
               <div class="cws-widget">
                 <div class="widget-categories">
-                  <h2 class="widget-title">Categories</h2>
+                  <h2 class="widget-title">Categorias</h2>
                   <ul>
-                    <li class="cat-item cat-item-1"><a href="#">All</a>(155)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Family</a>(28)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Adventure</a>(15)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Romantic</a>(17)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Wildlife</a>(8)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Beach</a>(47)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Honeymoon</a>(23)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Island</a>(5)</li>
-                    <li class="cat-item cat-item-1"><a href="#">Parks</a>(12)</li>
+                        @foreach($tipocategoria as $item)
+                            <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}">{{$item->nombre}}</a></li>
+                        @endforeach 
                   </ul>
                 </div>
               </div>
@@ -147,34 +141,16 @@
               <!-- widget post-->
               <div class="cws-widget">
                 <div class="widget-post">
-                  <h2 class="widget-title alt">Popular Posts</h2>
+                  <h2 class="widget-title alt">POST POPULARES</h2>
                   <!-- item recent post-->
+                  @foreach($post as $item)
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="/public/pic/blog/80x80/1.jpg" data-at2x="pic/blog/80x80/1@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean a mi et risus facilisis maximus</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
+                    <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="width:80px; height:80px"></div>
+                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,60)!!}.</a></h3>
+                    <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="/public/pic/blog/80x80/2.jpg" data-at2x="pic/blog/80x80/2@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Mauris eu sapien non erat auctor aliquam</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="/public/pic/blog/80x80/3.jpg" data-at2x="pic/blog/80x80/3@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Nam ut mauris in justo tempus laoreet</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="/public/pic/blog/80x80/4.jpg" data-at2x="pic/blog/80x80/4@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean semper risus vitae auctor dictum</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
+                  @endforeach
+             
                   <!-- ! item recent post-->
                 </div>
               </div>
@@ -184,7 +160,12 @@
                 <div class="widget-tags">
                   <h2 class="widget-title">Tags</h2>
                   <!-- item tags-->
-                  <div class="widget-tags-wrap"><a href="#" rel="tag" class="tag">Adventure</a><a href="#" rel="tag" class="tag">Romantic</a><a href="#" rel="tag" class="tag">Wildlife</a><a href="#" rel="tag" class="tag">Beach</a><a href="#" rel="tag" class="tag">Honeymoon</a><a href="#" rel="tag" class="tag">Island</a><a href="#" rel="tag" class="tag">Parks</a><a href="#" rel="tag" class="tag">Family</a><a href="#" rel="tag" class="tag">Travel</a></div>
+                  <div class="widget-tags-wrap">
+                  @foreach($tipocategoria as $item)
+                    <a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}" rel="tag" class="tag">{{$item->nombre}}</a>
+                  @endforeach 
+                    
+                  </div>
                 </div>
               </div>
               <!-- ! widget tags-->
