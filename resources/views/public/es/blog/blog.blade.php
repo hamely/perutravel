@@ -51,7 +51,7 @@
     <section class="small-section bg-gray">
         <div class="container">
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style="margin-top: -80px;">
              
               <h3 class="title-section"><span>Bienvenido a nuestro blog de viajes</span></h3>
               
@@ -65,8 +65,6 @@
             
           </div>
 
-          
-        
 
         <div class="col-md-8">
                 <h6 class="title-section-top font-4">CULTURA</h6>
@@ -111,9 +109,6 @@
               </div>
             </div>
             <!-- ! Recomended item-->
-
-
-            
            
             
           </div>
@@ -230,7 +225,7 @@
       <div class="content-body">
       <div class="container page">
         <div class="row">
-          <div class="col-md-8 mb-60">
+          <div class="col-md-8 mb-60"  id="principal_blog">
             <!-- Blog item-->
             @foreach($data as $item)
             <div class="blog-item clearfix mb-30 border">
@@ -250,7 +245,7 @@
               </div>
             </div>
             @endforeach
-      
+             {!! $data->render() !!}
 
           </div>
           <div class="col-md-4 sidebar">
@@ -272,9 +267,7 @@
                 <div class="widget-categories">
                   <h2 class="widget-title">OTRO</h2>
                   <ul>
-                  @foreach($categoria as $item)
-                    <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a>(155)</li>
-                  @endforeach 
+               
                   </ul>
                 </div>
               </div>
@@ -404,10 +397,9 @@
                 <div class="widget-categories">
                   <h2 class="widget-title">Categorias</h2>
                   <ul>
-                  @foreach($categoria as $item)
-                    <!-- <li class="cat-item cat-item-1"><a href="/blogPorCategoria">{{$item->nombre}}</a></li> -->
-                    <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blogCategoria'=>$item->nombre])}}">{{$item->nombre}}</a></li>  
-                  @endforeach 
+                        @foreach($categoria as $item)
+                            <li class="cat-item cat-item-1"><a href="#">{{$item->nombre}}</a>(155)</li>
+                        @endforeach 
                   </ul>
                 </div>
               </div>
@@ -483,6 +475,38 @@
 @endsection
 
 @section('script')
+
+
+
   
+<script>
+
+
+
+$(document).on('click','.pagination a', function(e){
+
+    e.preventDefault();
+    var page=$(this).attr('href').split('page=')[1];
+    
+     $.ajax({                        
+                url:'{{ route('listar_blog') }}',
+                data:{page:page},
+                type: 'GET',           
+                dataType:'json',
+                success: function(data)             
+                {
+                
+                  $("#principal_blog").html(data);
+
+                }
+        });  
+
+});
+
+       
+     
+</script>
 
 @endsection
+
+

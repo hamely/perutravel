@@ -13,19 +13,28 @@ class PublicController extends Controller
    	return view('public.es.inicio');
    }
 
-   public function blog()
+   public function blog(Request $request)
    {
+      
+      
       $data = DB::table('blogs')
          ->select('blogs.url','blogs.descripcioncorta','blogs.fechaPublicacion','blogs.id','blogs.titulo','blogs.contenido','blogs.urlimagen','categoria_blogs.nombre as tipoblog')
          ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
-         ->get();
+         ->paginate(2);
+
+      if($request->ajax()) 
+      {
+
+          return response()->json(view("public.es.blog.principal_blog.pricipal_blog",compact('data'))->render());
+      }
+
 
       $categoria = DB::table('categoria_blogs')
          ->select('*') 
          ->get();
 
 
-      return view("public.es.blog.blog",['data' =>$data,'categoria'=>$categoria]);
+      return view("public.es.blog.blog",compact('data','categoria'));
    }
 
    public function detalleBlog($url)

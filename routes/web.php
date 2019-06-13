@@ -61,7 +61,12 @@ Route::resource('categoriaBlogs', 'CategoriaBlogController');
 
 Route::resource('blogs', 'BlogController');
 
-Route::get('/blog','PublicController@blog') ;
+Route::get('/blog','PublicController@blog');
+Route:: get('/listar_blog', 
+[
+	'uses' => 'PublicController@blog',
+	'as' => 'listar_blog'
+]);
 
 // Route::get('/blogPorCategoria','PublicController@blogPorCategoria');
 
