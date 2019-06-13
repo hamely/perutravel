@@ -44,9 +44,10 @@ class PublicController extends Controller
       return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog]);
    }
 
-   public function blogPorCategoria($categoria)
+   public function blogPorCategoria($categoria='',Request $request)
    {
 
+      //Obtener el id de la categoria por nombre
       $idCategoria=DB::table('categoria_blogs')
       ->select('id')
       ->where('nombre','=',$categoria)
@@ -59,11 +60,19 @@ class PublicController extends Controller
             $id=$item->id;
          }
     
+
          $blog=DB::table('blogs')
             ->select('*')
             ->where('categoria_blog_id','=',$id)
-            ->get();
+            ->paginate(4);
 
-      return view('public.es.blog.blogPorCategoria',['blog'=>$blog]);
+            
+         if($request->ajax()) 
+         {
+            return $request->categoria;
+            return response()->json(view("public.es.blog.principal_blog.principal_blog_categoria",compact('blog'))->render());
+         }
+
+      return view('public.es.blog.blogPorCategoria',['blog'=>$blog,'categoria'=>$categoria]);
    }
 }

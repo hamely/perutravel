@@ -5,7 +5,7 @@
       <div class="container page">
         <div class="row masonry">
           <div class="col-md-12">
-            <div class="row">
+            <div class="row" id="principal_categoria_blog">
               <!-- Blog Post-->
               @foreach($blog as $item)
               <div class="col-lg-6 mb-30">
@@ -21,18 +21,14 @@
                     <div class="blog-item-data">{{$item->fechaPublicacion}}</div>
                     <!-- Text Intro-->
                     
-
-
-                    <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="blog-single.html" class="blog-button">Leer más</a>
+                   <p> {!!str_limit($item->descripcioncorta,80)!!}</p><a href="blog-single.html" class="blog-button">Leer más</a>
                   </div>
                 </div>
                 <!-- ! Blog item-->
               </div>
               @endforeach
-              <!-- ! Blog Post-->
-          
-
-       
+              {!! $blog->render() !!}
+              <!-- ! Blog Post-->  
            
         
             
@@ -46,6 +42,35 @@
 @endsection
 
 @section('script')
+
   
+<script>
+
+
+$(document).on('click','.pagination a', function(e){
+
+    e.preventDefault();
+    var page=$(this).attr('href').split('page=')[1];
+    
+     $.ajax({                        
+                url:'{{ route('listar_categoria_blog') }}',
+                data:{categoria:{{$categoria}},page:page},
+                type: 'GET',           
+                dataType:'json',
+                success: function(data)             
+                {
+                console.log(data);
+                  $("#principal_categoria_blog").html(data);
+
+                }
+        });  
+
+});
+
+      
+     
+</script>
 
 @endsection
+
+

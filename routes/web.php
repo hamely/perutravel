@@ -68,6 +68,11 @@ Route:: get('/listar_blog',
 	'as' => 'listar_blog'
 ]);
 
+Route:: get('/listar_categoria_blog', 
+[
+	'uses' => 'PublicController@blogPorCategoria',
+	'as' => 'listar_categoria_blog'
+]);
 // Route::get('/blogPorCategoria','PublicController@blogPorCategoria');
 
 Route::get('/blogPorCategoria/{categoria?}',['uses'=>'PublicController@blogPorCategoria'])->name('blogPorCategoria');
