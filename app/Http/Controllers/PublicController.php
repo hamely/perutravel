@@ -20,7 +20,15 @@ class PublicController extends Controller
       $data = DB::table('blogs')
          ->select('blogs.url','blogs.descripcioncorta','blogs.fechaPublicacion','blogs.id','blogs.titulo','blogs.contenido','blogs.urlimagen','categoria_blogs.nombre as tipoblog')
          ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
-         ->paginate(6);
+         ->paginate(2);
+
+      $cultura = DB::table('blogs')
+         ->select('blogs.url','blogs.descripcioncorta','blogs.fechaPublicacion','blogs.id','blogs.titulo','blogs.contenido','blogs.urlimagen','categoria_blogs.nombre as tipoblog')
+         ->join('categoria_blogs','categoria_blogs.id','=','blogs.categoria_blog_id')
+         ->where('categoria_blogs.nombre','=','cultura')
+         ->paginate(2);
+
+  
 
       if($request->ajax()) 
       {
@@ -34,7 +42,7 @@ class PublicController extends Controller
          ->get();
 
 
-      return view("public.es.blog.blog",compact('data','categoria'));
+      return view("public.es.blog.blog",compact('data','categoria','cultura'));
    }
 
    public function detalleBlog($url)
