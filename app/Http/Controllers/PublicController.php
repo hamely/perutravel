@@ -43,9 +43,15 @@ class PublicController extends Controller
       ->select('*') 
       ->get();
 
+      //Detalle de cada blog
       $detalleBlog = Blog::where('url', '=', $url)->get()[0];
-      // dd($detalleBlog);
-      return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog,'tipocategoria'=>$tipocategoria]);
+      // fin
+
+      $post= DB::table('blogs')
+         ->select('*')
+         ->paginate(8);
+
+      return view('public.es.blog.detalleBlog',['detalleBlog'=>$detalleBlog,'tipocategoria'=>$tipocategoria,'post'=>$post]);
    }
 
    public function blogPorCategoria($categoria='',Request $request)
