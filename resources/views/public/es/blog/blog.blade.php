@@ -19,27 +19,22 @@
                         <div class="tp-banner-container">
                             <div class="tp-banner-slider">
                             <ul>
-                                <li data-masterspeed="700" data-slotamount="7" data-transition="fade"><img src="rs-plugin/assets/loader.gif" data-lazyload="/public/img/slider/slide-1.jpg" data-bgposition="center" alt="" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10">
+                                @foreach($data as $item)
+                                <li data-masterspeed="700" data-slotamount="7" data-transition="fade"><img src="rs-plugin/assets/loader.gif" data-lazyload="{{$item->urlimagen}}" style="width:1920px; height:860px" data-bgposition="center" alt="" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10">
                                 <div data-x="['center','center','center','center']" data-y="center" data-transform_in="x:-150px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="x:150px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="400" class="tp-caption sl-content">
-                                    <div class="sl-title-top">Bienvenido a</div>
-                                    <div class="sl-title">Cusco</div>
-                                    <div class="sl-title-bot">Starting <span>$105</span> per night</div>
+                                   <div style="background:rgba(0,0,0,0.5); width:800px; height:80px;  margin-top:400px; margin-left:0px;">
+
+                                         <div class="sl-title-top" style="padding:15px; font-size:20px; line-height: 120%">{{$item->titulo}}</div>
+                                  
+                                   
+                                   </div>
+                                    <!-- <div class="sl-title-top">Bienvenido a</div>
+                                    <div class="sl-title">Cusco</div> -->
+                                    <!-- <div class="sl-title-bot">Starting <span>$105</span> per night</div> -->
                                 </div>
                                 </li>
-                                <li data-masterspeed="700" data-transition="fade"><img src="rs-plugin/assets/loader.gif" data-lazyload="/public/img/slider/slide-2.jpg" data-bgposition="center" alt="" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10">
-                                <div data-x="['center','center','center','center']" data-y="center" data-transform_in="y:-150px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="y:150px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="400" class="tp-caption sl-content">
-                                    <div class="sl-title-top">Bienvenido a</div>
-                                    <div class="sl-title">Istanbul</div>
-                                    <div class="sl-title-bot">Starting <span>$255</span> per night</div>
-                                </div>
-                                </li>
-                                <li data-masterspeed="700" data-transition="fade"><img src="rs-plugin/assets/loader.gif" data-lazyload="/public/img/slider/slide-4.jpg" data-bgposition="center" alt="" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10">
-                                <div data-x="['center','center','center','center']" data-y="center" data-transform_in="x:150px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="x:-150px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="400" class="tp-caption sl-content">
-                                    <div class="sl-title-top">Bienvenido a</div>
-                                    <div class="sl-title">Dubai</div>
-                                    <div class="sl-title-bot">Starting <span>$280</span> per night</div>
-                                </div>
-                                </li>
+                                @endforeach
+                            
                             </ul>
                             </div>
                            
@@ -253,11 +248,14 @@
                 </div> -->
               <!-- ! widget search-->
               <!-- widget category-->
+              
               <div class="cws-widget">
                 <div class="widget-categories">
-                  <h2 class="widget-title">OTRO</h2>
+                  <h2 class="widget-title">Categorias</h2>
                   <ul>
-               
+                        @foreach($categoria as $item)
+                            <li class="cat-item cat-item-1"><a href="{{route('blogPorCategoria',['blog'=>$item->nombre])}}">{{$item->nombre}}</a></li>
+                        @endforeach 
                   </ul>
                 </div>
               </div>
@@ -280,21 +278,21 @@
               </div>
               <!-- ! widget post-->
               <!-- widget archive-->
-              <div class="cws-widget">
-                <div class="widget-archive">
-                  <h2 class="widget-title">Archives</h2>
-                  <ul>
-                    <li class="cat-item cat-item-1"><a href="#">May 2016 <span>(155)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">April 2016 <span>(28)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">March 2016 <span>(15)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">February 2016 <span>(17)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">January 2016 <span>(8)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">November 2016 <span>(23)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">October 2016 <span>(5)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">September 2016 <span>(12)</span> </a></li>
-                  </ul>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-archive">
+                    <h2 class="widget-title">Archives</h2>
+                    <ul>
+                      <li class="cat-item cat-item-1"><a href="#">May 2016 <span>(155)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">April 2016 <span>(28)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">March 2016 <span>(15)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">February 2016 <span>(17)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">January 2016 <span>(8)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">November 2016 <span>(23)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">October 2016 <span>(5)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">September 2016 <span>(12)</span> </a></li>
+                    </ul>
+                  </div>
+                </div> -->
               <!-- ! widget archive-->
               <!-- widget comments-->
                 <!-- <div class="cws-widget">
@@ -370,7 +368,7 @@
                   @foreach($data as $item)
                   <div class="item-recent clearfix">
                     <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="height:60px"></div>
-                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,60)!!}.</a></h3>
+                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,50)!!}.</a></h3>
                     <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
                   @endforeach
