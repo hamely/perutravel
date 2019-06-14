@@ -9,9 +9,6 @@
     <div class="content">
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
-
-           
-
             
             <div class="box-body">
                 <div class="panel panel-info">
@@ -20,7 +17,7 @@
                   
                          <form action="{{ url('/upload') }}" enctype="multipart/form-data" files="true" class="dropzone" id="upload-file-form" name="upload-file-form">
                             {{ csrf_field() }}
-                           
+                            <input type="text" name="idMultimedia" id="idMultimedia">
                         </form><br>
 
                    
