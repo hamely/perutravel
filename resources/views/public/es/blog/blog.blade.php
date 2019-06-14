@@ -22,12 +22,13 @@
                                 @foreach($data as $item)
                                 <li data-masterspeed="700" data-slotamount="7" data-transition="fade"><img src="rs-plugin/assets/loader.gif" data-lazyload="{{$item->urlimagen}}" style="width:1920px; height:860px" data-bgposition="center" alt="" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10">
                                 <div data-x="['center','center','center','center']" data-y="center" data-transform_in="x:-150px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="x:150px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="400" class="tp-caption sl-content">
-                                   <div style="background:rgba(0,0,0,0.5); width:800px; height:80px;  margin-top:400px; margin-left:0px;">
 
-                                         <div class="sl-title-top" style="padding:15px; font-size:20px; line-height: 120%">{{$item->titulo}}</div>
-                                  
-                                   
+                                   <div style="background:rgba(0,0,0,0.5); width:800px; height:80px;  margin-top:400px; margin-left:0px;">
+                                         <div class="sl-title-top" style="padding:15px; font-size:20px; line-height: 120%">{{$item->titulo}}</div>  
+                                                                    
                                    </div>
+
+                                  
                                     <!-- <div class="sl-title-top">Bienvenido a</div>
                                     <div class="sl-title">Cusco</div> -->
                                     <!-- <div class="sl-title-bot">Starting <span>$105</span> per night</div> -->
@@ -209,8 +210,11 @@
 
       <div class="content-body">
       <div class="container page">
+ 
         <div class="row">
           <div class="col-md-8 mb-60"  id="principal_blog">
+          <h6 class="title-section-top font-4" style="margin-top: -74px;">ÚLTIMOS ARTÍCULOS</h6>
+                  <div class="cws_divider mb-25 mt-5"></div>
             <!-- Blog item-->
             @foreach($data as $item)
             <div class="blog-item clearfix mb-30 border">
