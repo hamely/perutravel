@@ -267,33 +267,15 @@
                 <div class="widget-post">
                   <h2 class="widget-title alt">ÚLTIMOS ARTICULOS</h2>
                   <!-- item recent post-->
+                  @foreach($data as $item)
                   <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/1.jpg" data-at2x="pic/blog/80x80/1@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean a mi et risus facilisis maximus</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
+                    <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="height:60px"></div>
+                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,50)!!}.</a></h3>
+                    <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/2.jpg" data-at2x="pic/blog/80x80/2@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Mauris eu sapien non erat auctor aliquam</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/3.jpg" data-at2x="pic/blog/80x80/3@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Nam ut mauris in justo tempus laoreet</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
-                  <!-- item recent post-->
-                  <div class="item-recent clearfix">
-                    <div class="widget-post-media"><img src="public/pic/blog/80x80/4.jpg" data-at2x="pic/blog/80x80/4@2x.jpg" alt></div>
-                    <h3 class="title"><a href="blog-single.html">Aenean semper risus vitae auctor dictum</a></h3>
-                    <div class="date-recent">Mon, 03-23-2016</div>
-                  </div>
-                  <!-- ! item recent post-->
+                  @endforeach
+            
+             
                 </div>
               </div>
               <!-- ! widget post-->
