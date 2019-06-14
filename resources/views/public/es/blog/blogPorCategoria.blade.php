@@ -13,7 +13,7 @@
                 <!-- Blog item-->
                 <div class="blog-item clearfix border">
                   <!-- Blog Image-->
-                  <div class="blog-media"><a href="blog-single.html">
+                  <div class="blog-media"><a href="{{route('detalleBlog',['blog'=>$item->url])}}">
                       <div class="pic"><img src="{{ $item->urlimagen}}" data-at2x="pic/blog/270x270/1@2x.jpg" alt style="width:270px; height:270px;"></div></a></div>
                   <!-- blog body-->
                   <div class="blog-item-body clearfix">

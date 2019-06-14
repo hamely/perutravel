@@ -219,7 +219,7 @@
             @foreach($data as $item)
             <div class="blog-item clearfix mb-30 border">
               <!-- Blog Image-->
-              <div class="blog-media"><a href="blog-single.html">
+              <div class="blog-media"><a href="{{route('detalleBlog',['blog'=>$item->url])}}">
                   <div class="pic"><img src="{{ $item->urlimagen}}" data-at2x="pic/blog/270x270/1@2x.jpg" alt  style="width: 270px; height: 270px;"></div></a></div>
               <!-- blog body-->
               <div class="blog-item-body clearfix">
@@ -272,7 +272,7 @@
                   @foreach($data as $item)
                   <div class="item-recent clearfix">
                     <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="height:60px"></div>
-                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,50)!!}.</a></h3>
+                    <h3 class="title"><a href="{{route('detalleBlog',['blog'=>$item->url])}}">{!!str_limit($item->titulo,50)!!}.</a></h3>
                     <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
                   @endforeach
@@ -372,7 +372,7 @@
                   @foreach($data as $item)
                   <div class="item-recent clearfix">
                     <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="height:60px"></div>
-                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,50)!!}.</a></h3>
+                    <h3 class="title"><a href="{{route('detalleBlog',['blog'=>$item->url])}}">{!!str_limit($item->titulo,50)!!}.</a></h3>
                     <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
                   @endforeach
