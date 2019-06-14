@@ -111,6 +111,26 @@
 
             });
 
+             $('#btnUpload').on('click', function(e){
+
+                e.preventDefault();
+                var data = $('#form-crearEntrada').serialize();
+
+                 $.ajax({
+                  url:'{{ route('blog.contenido') }}',
+                    type: 'POST',
+                    data:data,
+                     success: function(data) {
+                       
+                             console.log(data);
+                             myDropzone.processQueue();
+                            window.setTimeout('location.reload()', 3000);
+                    }
+                    
+                });
+
+        });
+
 </script>
 
 @endsection

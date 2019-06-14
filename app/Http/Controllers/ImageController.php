@@ -35,6 +35,8 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
+        $id=DB::table('multimedia')->max('id');
+
         $path = 'public/multimedia/';
         $files = $request->file('file');
         foreach($files as $file)
