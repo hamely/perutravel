@@ -381,21 +381,21 @@
               </div>
               <!-- ! widget post-->
               <!-- widget archive-->
-              <div class="cws-widget">
-                <div class="widget-archive">
-                  <h2 class="widget-title">Archives</h2>
-                  <ul>
-                    <li class="cat-item cat-item-1"><a href="#">May 2016 <span>(155)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">April 2016 <span>(28)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">March 2016 <span>(15)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">February 2016 <span>(17)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">January 2016 <span>(8)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">November 2016 <span>(23)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">October 2016 <span>(5)</span> </a></li>
-                    <li class="cat-item cat-item-1"><a href="#">September 2016 <span>(12)</span> </a></li>
-                  </ul>
-                </div>
-              </div>
+                <!-- <div class="cws-widget">
+                  <div class="widget-archive">
+                    <h2 class="widget-title">Archives</h2>
+                    <ul>
+                      <li class="cat-item cat-item-1"><a href="#">May 2016 <span>(155)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">April 2016 <span>(28)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">March 2016 <span>(15)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">February 2016 <span>(17)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">January 2016 <span>(8)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">November 2016 <span>(23)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">October 2016 <span>(5)</span> </a></li>
+                      <li class="cat-item cat-item-1"><a href="#">September 2016 <span>(12)</span> </a></li>
+                    </ul>
+                  </div>
+                </div> -->
               <!-- ! widget archive-->
               <!-- widget calendar-->
               <div class="cws-widget">
