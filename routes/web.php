@@ -36,6 +36,10 @@ Route::resource('alojamientos', 'alojamientoController');
 Route::resource('ubigeos', 'UbigeoController');
 
 Route::resource('multimedia', 'multimediaController');
+Route::resource('imagen','ImageController');
+Route::get('image/listar/{id?}', [ 'uses' => 'ImageController@listarImagenes' ])->name('listarImagenes');
+Route::get('image/delete/{id?}',[ 'uses' => 'ImageController@delete_img' ])->name('EliminarImagenes');
+
 
 Route::resource('languages', 'languagesController');
 

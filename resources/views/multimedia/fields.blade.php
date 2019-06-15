@@ -13,6 +13,7 @@
 
 <div class="form-group col-sm-12" style="text-align: center;">
     <button type="submit" class="btn btn-success" id="submit" >Subir multimedia</button>
+    <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Guardar </button>
     <a href="{!! route('multimedia.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 

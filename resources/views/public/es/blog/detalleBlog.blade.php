@@ -153,9 +153,10 @@
                   @foreach($post as $item)
                   <div class="item-recent clearfix">
                     <div class="widget-post-media"><img src="{{$item->urlimagen}}" data-at2x="pic/blog/80x80/1@2x.jpg" alt style="width:80px; height:80px"></div>
-                    <h3 class="title"><a href="blog-single.html">{!!str_limit($item->titulo,60)!!}.</a></h3>
+                    <h3 class="title"><a href="{{route('detalleBlog',['blog'=>$item->url])}}">{!!str_limit($item->titulo,60)!!}.</a></h3>
                     <div class="date-recent">{{$item->fechaPublicacion}} </div>
                   </div>
+                  <div></div>
                   @endforeach
              
                   <!-- ! item recent post-->
