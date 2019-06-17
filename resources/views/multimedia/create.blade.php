@@ -48,9 +48,9 @@
          Dropzone.autoDiscover = false;
         var myDropzone = new Dropzone('#dropzone', {
             paramName: 'file',
-            maxFilesize: 5, // MB
+            maxFilesize: 25, // MB
             autoProcessQueue: false,
-            maxFiles: 1,
+            maxFiles: 12,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             addRemoveLinks: true,
             dictRemoveFile: 'Remover foto',
@@ -84,7 +84,7 @@
                         data:data,
                          success: function(data) {
                                 $("#id").val(data.id);
-                                 // myDropzone.processQueue();
+                                 myDropzone.processQueue();
                                  // window.setTimeout('location.reload()', 3000);
                         }
                         
