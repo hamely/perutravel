@@ -162,21 +162,25 @@ class multimediaController extends AppBaseController
     public function storeImagen(Request $request)
     {
         
-        return $request->file('file');
-         // $files = $request->file('file');
-         // foreach($files as $file)
-         // {
-         //    $fileName = time().'.'.$file->getClientOriginalName();
-         //    $size = $file->getClientSize();
-         //    $ruta = '/public/multimedia/'.$fileName;
-         //    $file->move($path, $fileName);
+       
 
-         //    Imagenes::create([
-         //        'multimedia_id'=> $request->id,
-         //        'url'=>$ruta,
-         //      ]);
-         // }
+        $file = $request->file('file');
+        $path = public_path() . '/public/multimedia';
 
+
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+   
+         DB::table('imagen')
+                ->insert([
+                     'multimedia_id'=> 1,
+                            'url'=> '/public/multimedia'.'/'.$fileName
+
+                ]);
+         
+
+        $file->move($path, $fileName);
+        
      
     }   
 

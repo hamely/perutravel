@@ -15,8 +15,8 @@
                     <div class="panel-heading">SUBIR MULTIMEDIA</div>
                         <div class="panel-body">
                   
-                         {!! Form::open(['route' => 'multimedia.storeImagen','id'=>'dropzone','class'=>'dropzone']) !!}
-                                  <input type="text" name="id" id="id">
+                         {!! Form::open(['route' => 'multimedia.storeImagen','method' => 'POST','id'=>'dropzone','class'=>'dropzone']) !!}
+                                  <input type="hidden" name="id" id="id">
                                {!! Form::close() !!}
 
                         <br>
@@ -85,7 +85,7 @@
                          success: function(data) {
                                 $("#id").val(data.id);
                                  myDropzone.processQueue();
-                                 // window.setTimeout('location.reload()', 3000);
+                                 window.setTimeout('location.reload()', 3000);
                         }
                         
                     });
