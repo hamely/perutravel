@@ -15,14 +15,10 @@
                     <div class="panel-heading">SUBIR MULTIMEDIA</div>
                         <div class="panel-body">
                   
-                         <form action="{{ url('/upload') }}" enctype="multipart/form-data" files="true" class="dropzone" id="upload-file-form" name="upload-file-form">
-                            {{ csrf_field() }}
-                            <input type="text" name="idMultimedia" id="idMultimedia">
-                        </form>
-                          {!! Form::open(['route' => 'blog.save','id'=>'upload-file-form','class'=>'upload-file-form']) !!}
+                         {!! Form::open(['route' => 'multimedia.storeImagen','id'=>'dropzone','class'=>'dropzone']) !!}
                                   
                                {!! Form::close() !!}
-                               
+
                         <br>
 
                    {!! Form::open(['id'=>'form-crearEntradaMultimedia','class'=>'form-crearEntrada']) !!}
@@ -50,11 +46,11 @@
       
 
          Dropzone.autoDiscover = false;
-         var myDropzone = new Dropzone('#upload-file-form', {
+        var myDropzone = new Dropzone('#dropzone', {
             paramName: 'file',
             maxFilesize: 5, // MB
             autoProcessQueue: false,
-            maxFiles: 20,
+            maxFiles: 1,
             acceptedFiles: ".jpeg,.jpg,.png,.gif",
             addRemoveLinks: true,
             dictRemoveFile: 'Remover foto',
@@ -63,6 +59,7 @@
                 this.on("success", function(file, response) {
                     var a = document.createElement('span');
                     a.className = "thumb-url btn btn-primary";
+                    
                     a.innerHTML = "copy url";
                     file.previewTemplate.appendChild(a);
                 });

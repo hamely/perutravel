@@ -41,7 +41,11 @@ Route:: POST('/saveContenidoMultimedia',
 	'uses' => 'multimediaController@saveContenidoMultimedia',
 	'as' => 'multimedia.contenidoMultimedia'
 ]);
-
+Route:: POST('/images-multimedia', 
+[
+	'uses' => 'multimediaController@storeImagen',
+	'as' => 'multimedia.storeImagen'
+]);
 Route::resource('imagen','ImageController');
 Route::get('image/listar/{id?}', [ 'uses' => 'ImageController@listarImagenes' ])->name('listarImagenes');
 Route::get('image/delete/{id?}',[ 'uses' => 'ImageController@delete_img' ])->name('EliminarImagenes');
