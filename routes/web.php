@@ -104,3 +104,4 @@ Route:: POST('/saveCambioImagenBlog',
 	'as' => 'blog.cambioImagen'
 ]);
 
+Route::get('/tours','PublicController@tours');

@@ -105,4 +105,9 @@ class PublicController extends Controller
 
       return view('public.es.blog.blogPorCategoria',['blog'=>$blog,'categoria'=>$categoria]);
    }
+
+   public function tours()
+   {
+      return view('public.es.tour.index');
+   }
 }
