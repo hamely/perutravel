@@ -58,7 +58,9 @@ Route::resource('paises', 'paisesController');
 
 
 Route::resource('testimonios', 'TestimonioController');
-Route::get('/tours','PublicController@tours');
+Route::get('/paquete','PublicController@tours');
+Route::get('/detalletour',['uses'=>'PublicController@detalleTour'])->name('detalletour');
+
 Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');
 
 Route::resource('tours', 'toursController');
