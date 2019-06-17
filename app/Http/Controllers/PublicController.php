@@ -110,4 +110,9 @@ class PublicController extends Controller
    {
       return view('public.es.tour.index');
    }
+
+   public function detalleTour()
+   {
+      return view('public.es.tour.detalletour');
+   }
 }

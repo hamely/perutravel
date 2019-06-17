@@ -68,7 +68,7 @@
               <li><a href="hotels-search.html" class="mn-has-sub">PAQUETES<i class="fa fa-angle-down button_open"></i></a>
                 <!-- Sub-->
                 <ul class="mn-sub">
-                  <li><a href="/tours">AVENTURA</a></li>
+                  <li><a href="/paquete">AVENTURA</a></li>
                   <li><a href="hotels-search.html">MÍSTICO</a></li>
                   <li><a href="hotels-details.html">TRADICIONAL</a></li>
                   <li><a href="hotels-details.html">VIVENCIAL</a></li>
