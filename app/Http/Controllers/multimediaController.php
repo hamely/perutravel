@@ -155,7 +155,79 @@ class multimediaController extends AppBaseController
 
         return redirect(route('multimedia.index'));
 
-    
+     
     }
+
+
+    public function storeImagen(Request $request)
+    {
+        
+        $file = $request->file('file');
+        $path = public_path() . '/public/blog';
+
+
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+        $file->move($path, $fileName);
+
+        $id=DB::table('blogs')->max('id');
+
+        $blog = Blog::find($id);
+
+        $blog->urlimagen = '/public/blog'.'/'.$fileName;
+
+        $blog->save();
+
+     
+    }   
+
+    public function saveContenidoMultimedia(Request $request)
+    {
+
+         $input = $request->all();
+
+        // dd($request->all());
+         $multimedia = $this->multimediaRepository->create($input);
+
+        // $user = Auth::user();
+        // $usuarioId=$user->id;
+
+       
+        // $data = new Blog;
+        // $data->categoria_blog_id = $request->categoria_blog_id;
+   
+        // $data->titulo = $request->titulo;
+        // $data->descripcioncorta= $request->descripcioncorta;
+        // $data->url = Str::slug($request['titulo']);
+        // $data->fechaPublicacion = $request->fechaPublicacion;
+        // $data->estado = '1';
+        // $data->contenido=$request->contenido;
+        // $data->autor=$request->autor;
+        // $data->contador= '';
+        // $data->usuario_id=$usuarioId;
+        // $data->urlimagen='1.jpg';
+                  
+        // $data->save();
+
+
+    }
+
+    public function saveCambioImagenBlog(Request $request)
+    {
+        $file = $request->file('file');
+        $path = public_path() . '/public/blog';
+
+
+        $fileName = uniqid() . $file->getClientOriginalName();
+
+        $file->move($path, $fileName);
+
+        $blog = Blog::find($request->id);
+
+        $blog->urlimagen = '/public/blog'.'/'.$fileName;
+
+        $blog->save();
+    }
+
 
 }

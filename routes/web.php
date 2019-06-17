@@ -36,6 +36,12 @@ Route::resource('alojamientos', 'alojamientoController');
 Route::resource('ubigeos', 'UbigeoController');
 
 Route::resource('multimedia', 'multimediaController');
+Route:: POST('/saveContenidoMultimedia', 
+[
+	'uses' => 'multimediaController@saveContenidoMultimedia',
+	'as' => 'multimedia.contenidoMultimedia'
+]);
+
 Route::resource('imagen','ImageController');
 Route::get('image/listar/{id?}', [ 'uses' => 'ImageController@listarImagenes' ])->name('listarImagenes');
 Route::get('image/delete/{id?}',[ 'uses' => 'ImageController@delete_img' ])->name('EliminarImagenes');
@@ -48,7 +54,7 @@ Route::resource('paises', 'paisesController');
 
 
 Route::resource('testimonios', 'TestimonioController');
-
+Route::get('/tours','PublicController@tours');
 Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');
 
 Route::resource('tours', 'toursController');
@@ -77,6 +83,9 @@ Route:: get('/listar_categoria_blog/{categoria?}',
 	'uses' => 'PublicController@blogPorCategoria',
 	'as' => 'listar_categoria_blog'
 ]);
+
+
+
 // Route::get('/blogPorCategoria','PublicController@blogPorCategoria');
 
 Route::get('/blogPorCategoria/{categoria?}',['uses'=>'PublicController@blogPorCategoria'])->name('blogPorCategoria');
@@ -104,4 +113,3 @@ Route:: POST('/saveCambioImagenBlog',
 	'as' => 'blog.cambioImagen'
 ]);
 
-Route::get('/tours','PublicController@tours');
