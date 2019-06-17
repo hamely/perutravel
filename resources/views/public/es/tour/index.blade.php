@@ -97,7 +97,7 @@
                   <h6 class="blog-title">Hotel Bohemians</h6></a>
                 <div class="stars stars-4"></div>
                 <div class="recom-price"><span class="font-4">$90</span> per night</div>
-                <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="hotels-details.html" class="recom-button">Leer más</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
+                <p class="mb-30">Quisque egestas a est in convallis. Maecenas pellentesque.</p><a href="{{route('detalletour')}}" class="recom-button">Leer más</a><a href="hotels-details.html" class="cws-button small alt">Book now</a>
                 <div class="action font-2">20%</div>
               </div>
               <!-- Recomended Image-->
