@@ -9,7 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
-
+use DB;
 class multimediaController extends AppBaseController
 {
     /** @var  multimediaRepository */
@@ -162,21 +162,21 @@ class multimediaController extends AppBaseController
     public function storeImagen(Request $request)
     {
         
-        $file = $request->file('file');
-        $path = public_path() . '/public/blog';
 
+         $files = $request->file('file');
+         foreach($files as $file)
+         {
+            $fileName = time().'.'.$file->getClientOriginalName();
+            $size = $file->getClientSize();
+            $ruta = 'admin/uploads/'.$fileName;
+            $file->move($path, $fileName);
 
-        $fileName = uniqid() . $file->getClientOriginalName();
+            Imagenes::create([
+                'multimedia_id'=> $request->idMultimedia,
+                'url'=>$fileName,
 
-        $file->move($path, $fileName);
-
-        $id=DB::table('blogs')->max('id');
-
-        $blog = Blog::find($id);
-
-        $blog->urlimagen = '/public/blog'.'/'.$fileName;
-
-        $blog->save();
+              ]);
+         }
 
      
     }   
@@ -208,6 +208,9 @@ class multimediaController extends AppBaseController
         // $data->urlimagen='1.jpg';
                   
         // $data->save();
+         $id=DB::table('multimedia')->max('id');
+
+         return response()->json(['id'=>$id]);
 
 
     }

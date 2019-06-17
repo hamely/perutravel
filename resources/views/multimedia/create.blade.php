@@ -16,7 +16,7 @@
                         <div class="panel-body">
                   
                          {!! Form::open(['route' => 'multimedia.storeImagen','id'=>'dropzone','class'=>'dropzone']) !!}
-                                  
+                                  <input type="text" name="id" id="id">
                                {!! Form::close() !!}
 
                         <br>
@@ -83,7 +83,7 @@
 
                         data:data,
                          success: function(data) {
-                           
+                                $("#id").val(data.id);
                                  // myDropzone.processQueue();
                                  // window.setTimeout('location.reload()', 3000);
                         }
