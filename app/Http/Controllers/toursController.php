@@ -54,13 +54,18 @@ class toursController extends AppBaseController
     {
         $opcion=0;
 
-        
+          $dataCategoria = DB::table('languages')
+                    ->select('tipo_categoria_tours.nombre','tipo_categoria_tours.id','languages.abrr')
+                    ->join('tipo_categoria_tours', 'tipo_categoria_tours.lenguaje_id', '=', 'languages.id')
+                    ->where('languages.abrr','es' )
+                    ->get();
+ 
 
         $multimedia=DB::table('multimedia')
                     ->select('id','nombre')
                     ->get();
 
-        return view('tours.create',['opcion'=>$opcion, 'multimedia'=>$multimedia]);
+        return view('tours.create',['opcion'=>$opcion, 'multimedia'=>$multimedia,'dataCategoria'=>$dataCategoria]);
     }
 
     /**

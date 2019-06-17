@@ -1,12 +1,4 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Summernote</title>
-  
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-  
- 
-</head>
+
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nombre', 'Nombre:') !!}
@@ -19,6 +11,22 @@
     {!! Form::label('multimedia_id', 'Multimedia:') !!}
         <select id="multimedia_id" name="multimedia_id" class='form-control'>
             @foreach($multimedia as $item )
+              @if($opcion==0)
+                <option value="{{$item->id}}">{{$item->nombre}}</option>
+              @else
+                 <option value="{{$item->id}}" {{ ($item->id == $tours->multimedia_id) ? 'selected': ''}} >{{$item->nombre}}</option>
+              @endif
+               
+            @endforeach
+        </select>
+</div>
+
+<div class="form-group col-sm-6">
+    <!-- {!! Form::label('multimedia_id', 'Multimedia Id:') !!}
+    {!! Form::text('md', null, ['class' => 'form-control']) !!} -->
+    {!! Form::label('Categoria', 'Categoria:') !!}
+        <select id="categoria_id" name="categoria_id" class='form-control'>
+            @foreach($dataCategoria as $item )
               @if($opcion==0)
                 <option value="{{$item->id}}">{{$item->nombre}}</option>
               @else
@@ -43,14 +51,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12" style="text-align: center;">
-    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+    <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Guardar </button>
     <a href="{!! route('tours.index') !!}" class="btn btn-default">Cancelar</a>
 </div>
 
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        $('#organizacion').summernote();
-    });
-  </script>
-  @endsection
