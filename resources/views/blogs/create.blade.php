@@ -51,7 +51,7 @@
                 <div class="row">
 
 
-                    {!! Form::open(['id'=>'form-crearEntrada','class'=>'form-crearEntrada']) !!}
+                    {!! Form::open(['id'=>'form-crearEntrada ','class'=>'form-crearEntrada ']) !!}
 
                         @include('blogs.fields')
 
@@ -103,6 +103,7 @@
 
           $('#btnUpload').on('click', function(e){
 
+                alert();
                 e.preventDefault();
                 myDropzone.processQueue();
                 var data = $('#form-crearEntrada').serialize();

@@ -64,7 +64,6 @@ class tours extends Model
      */
     public static $rules = [
         'nombre' => 'required',
-        'estado' => 'required'
     ];
 
     

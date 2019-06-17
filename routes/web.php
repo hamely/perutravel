@@ -62,6 +62,11 @@ Route::get('/tours','PublicController@tours');
 Route::resource('tipoCategoriaTours', 'TipoCategoriaTourController');
 
 Route::resource('tours', 'toursController');
+Route:: POST('/tours_save', 
+[
+	'uses' => 'toursController@storeTours',
+	'as' => 'tours.save'
+]);
 
 Route::resource('itinerarios', 'itinerariosController');
 

@@ -11,7 +11,7 @@ use App\Repositories\itinerariosRepository;
 use Flash;
 use Response;
 use DB;
-
+use Illuminate\Support\Str as Str; 
 class toursController extends AppBaseController
 {
     /** @var  toursRepository */
@@ -75,16 +75,47 @@ class toursController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreatetoursRequest $request)
+    public function store(Request $request)
     {
-        dd($request->all());
-        $input = $request->all();
 
-        $tours = $this->toursRepository->create($input);
+        $file = $request->file('file');
+        $path = public_path() . '/public/tours';
+        $fileName = uniqid() . $file->getClientOriginalName();
+   
+       
+       DB::table('tours')
+                ->where('id', '=',  $request->id)
+                ->update([
+                    'img' => '/public/tours'.'/'.$fileName,
+                ]);
+         $file->move($path, $fileName);
 
-        Flash::success('Tours saved successfully.');
+    }
 
-        return redirect(route('tours.index'));
+    public function storeTours(CreatetoursRequest $request)
+    {
+
+         DB::table('tours')
+                ->insert([
+                    'nombre' => $request->nombre,
+                    'img' => '1.jpg',
+                    'descripcion' => $request->descripcion,
+                    'estado' => '1',
+                    'principal' => '1',
+                    'slug' => Str::slug($request['nombre']),
+                    'multimedia_id' => $request->multimedia_id,
+                    'organizacion' =>  $request->organizacion,
+                ]);
+
+        $id=DB::table('tours')->max('id');
+
+       DB::table('tour_categoria')
+                ->insert([
+                    'tour_id' => $id,
+                    'categoria_id' => $request->categoria_id,
+                ]);
+
+         return response()->json(['id'=>$id]);
     }
 
     /**

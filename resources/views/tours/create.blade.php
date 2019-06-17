@@ -17,7 +17,7 @@
                     
                    
                          {!! Form::open(['route' => 'tours.store','id'=>'dropzone','class'=>'dropzone']) !!}
-                              
+                                                <input type="hidden" name="id" id="id">
                            {!! Form::close() !!}
 
                 </div>
@@ -25,7 +25,7 @@
               </div>
 
                 <div class="row">
-                    {!! Form::open(['route' => 'tours.store','id'=>'form-crearEntrada','class'=>'form-crearEntrada']) !!}
+                    {!! Form::open(['route' => 'tours.save','id'=>'form-crearTours','class'=>'form-crearTours']) !!}
 
                         @include('tours.fields')
 
@@ -60,9 +60,7 @@
     </div>
 @endsection
 @section('scripts')
-@section('scripts')
 
-   
  
  <script>
 
@@ -101,16 +99,15 @@
          $('#btnUpload').on('click', function(e){
 
                 e.preventDefault();
-                myDropzone.processQueue();
-                var data = $('#form-crearEntrada').serialize();
+                var data = $('#form-crearTours').serialize();
 
                  $.ajax({
-                  url:'{{ route('blog.contenido') }}',
+                  url:'{{ route('tours.save') }}',
                     type: 'POST',
                     data:data,
                      success: function(data) {
-                       
-                             console.log(data);
+                            $("#id").val(data.id);
+                            
                              myDropzone.processQueue();
                              window.setTimeout('location.reload()', 3000);
                     }

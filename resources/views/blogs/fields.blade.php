@@ -1,11 +1,4 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Summernote</title>
-  
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-  
-</head>
+
 <!-- Usuario Id Field -->
 <!-- <div class="form-group col-sm-6">
     {!! Form::label('usuario_id', 'Usuario Id:') !!}
@@ -80,7 +73,7 @@
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12" style="text-align: center;">
-     <button type="submit"  style="text-align: center;" class="btn btn-success" id="Modificar" name="Modificar">Modificar</button>
+     <button type="button"  style="text-align: center;" class="btn btn-success" id="Modificar" name="Modificar">Modificar</button>
        <button type="button"  style="text-align: center;" class="btn btn-success" id="btnUpload" name="btnUpload">Guardar </button>
 
     <a href="{!! route('blogs.index') !!}" class="btn btn-default">Cancelar</a>
