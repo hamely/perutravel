@@ -108,7 +108,18 @@ class PublicController extends Controller
 
    public function tours()
    {
-      return view('public.es.tour.index');
+      // $data=db::table('tours')
+      // ->select('*')
+      // ->get();
+
+      $data=db::table('tours')
+      ->select('tours.nombre as nombretour','tours.descripcion as descripciontour','tours.img')
+      ->join('tour_categoria','tour_categoria.tour_id','=','tours.id')
+      ->join('tipo_categoria_tours','tipo_categoria_tours.id','=','tour_categoria.categoria_id')
+      ->where('tipo_categoria_tours.nombre','=','tradicional')
+      ->get();
+
+      return view('public.es.tour.index',['data'=>$data]);
    }
 
    public function detalleTour()
