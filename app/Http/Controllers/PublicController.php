@@ -106,20 +106,32 @@ class PublicController extends Controller
       return view('public.es.blog.blogPorCategoria',['blog'=>$blog,'categoria'=>$categoria]);
    }
 
-   public function tours()
+   public function tours($categoria='',Request $request)
    {
       // $data=db::table('tours')
       // ->select('*')
       // ->get();
 
+      $idCategoria=DB::table('tipo_categoria_tours')
+      ->select('id')
+      ->where('nombre','=',$categoria)
+      ->get();
+      
+      $id=0;
+
+         foreach($idCategoria as $item)
+         {
+            $id=$item->id;
+         }
+
       $data=db::table('tours')
       ->select('tours.nombre as nombretour','tours.descripcion as descripciontour','tours.img')
       ->join('tour_categoria','tour_categoria.tour_id','=','tours.id')
       ->join('tipo_categoria_tours','tipo_categoria_tours.id','=','tour_categoria.categoria_id')
-      ->where('tipo_categoria_tours.nombre','=','tradicional')
+      ->where('tipo_categoria_tours.id','=',$id)
       ->get();
 
-      return view('public.es.tour.index',['data'=>$data]);
+      return view('public.es.tour.index',['data'=>$data,'categoria'=>$categoria]);
    }
 
    public function detalleTour()
