@@ -1,12 +1,3 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Summernote</title>
-  
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-  
-</head>
-<!-- Nombre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('nombre', 'Nombre:') !!}
     {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
@@ -68,11 +59,3 @@
 </div>
 
 
-
-@section('scripts')
-<script>
-    $(document).ready(function() {
-        $('#descripcion').summernote();
-    });
-  </script>
-  @endsection

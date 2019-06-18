@@ -164,19 +164,11 @@ class itinerariosController extends AppBaseController
      */
     public function destroy($id)
     {
-        $itinerarios = $this->itinerariosRepository->find($id);
+       
 
-        if (empty($itinerarios)) {
-            Flash::error('Itinerarios not found');
+        DB::table('itinerarios')->where('id', '=', $id)->delete();
+        return redirect()->back();
 
-            return redirect(route('itinerarios.index'));
-        }
-
-        $this->itinerariosRepository->delete($id);
-
-        Flash::success('Itinerarios deleted successfully.');
-
-        return redirect(route('itinerarios.index'));
     }
 
     public function tourItinerarioShow($id)

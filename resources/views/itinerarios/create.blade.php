@@ -22,3 +22,11 @@
         </div>
     </div>
 @endsection
+
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        $('#descripcion').summernote();
+    });
+  </script>
+  @endsection
